@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单元格的合并</title>
+</head>
+<body>
+
+<table border="1px" cellspacing="0">
+    <caption>这是个人简历</caption>
+    <colgroup span="6" width="100px"></colgroup>
+    <colgroup span="1" width="200px"></colgroup>
+    <thead>
+    <tr height="40px">
+        <th colspan="7" scope="colgroup">个人简历</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr height="40px" align="center">
+        <th scope="row">姓名</th>
+        <td></td>
+        <th scope="row">性别</th>
+        <td></td>
+        <th scope="row">年龄</th>
+        <td></td>
+        <td rowspan="4">照片</td>
+    </tr>
+    <tr height="40px" align="center">
+        <th scope="row">学历</th>
+        <td></td>
+        <th scope="row">籍贯</th>
+        <td colspan="3"></td>
+
+    </tr>
+    <tr height="40px" align="center">
+        <th scope="row">电话</th>
+        <td></td>
+        <th scope="row">政治面貌</th>
+        <td colspan="3"></td>
+
+    </tr>
+    <tr height="40px" align="center">
+        <th scope="row">毕业院校</th>
+        <td colspan="5"></td>
+
+    </tr>
+    <tr height="40px" align="center">
+        <th scope="row">求职意向</th>
+        <td colspan="6"></td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="7" style="text-align: center">这是页脚</td>
+    </tr>
+    </tfoot>
+
+</table>
+</body>
+</html>

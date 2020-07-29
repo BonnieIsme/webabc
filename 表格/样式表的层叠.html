@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>样式表的层叠测试</title>
+    <style><!--行内优先级大于 内部优先级 -->
+        #navigation{
+            text-align: center;
+        }
+        .item{
+            color: grey;
+            text-decoration: none;
+            border-right: solid 1px grey;
+            padding: 0 15px;
+        }
+        .item_last{
+            color: grey;
+            text-decoration: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div id="navigation">
+    <a href="#" class="item">首页</a>
+    <a href="#" class="item">办公家居</a>
+    <a href="#" class="item">数码科技</a>
+    <a href="#" class="item">母婴</a>
+    <a href="#" class="item">团购</a>
+    <a href="#" class="item_last">秒杀活动</a>
+</div>
+</body>
+</html>

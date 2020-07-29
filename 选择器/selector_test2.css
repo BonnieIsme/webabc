@@ -1,0 +1,29 @@
+    a:link {
+        color: orange;
+    }
+
+    a:visited {
+        color: green;
+    }
+
+    a:hover {
+        text-decoration-line: underline;
+    }
+
+    .container p:first-child{
+        font-size: 150%;
+    }
+
+    .container p:first-child::first-line {
+        color: red;
+    }
+
+    .w {
+        background-color: white;
+                   color: black;
+    }
+
+    .b {
+        background-color: black;
+                   color: white;
+    }

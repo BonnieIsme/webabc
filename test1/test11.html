@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>&lt;title&gt; element</title>
+</head>
+<body>
+<h1>&lt;h1&gt; element</h1>
+<p>Japanese example: ご飯が熱い。</p>
+<figure>
+    <img style="width: 400px" src="images/大图1.jpg">
+    <img style="width: 400px" src="images/大图2.jpg">
+
+    <figcaption>这是大图1和大图2</figcaption>
+</figure>
+<figure>
+    <img style="width: 400px" src="images/大图2.jpg">
+    <figcaption>这是大图2</figcaption>
+</figure>
+
+<audio controls autoplay>
+    <source src="那英、肖战%20-%20跟着感觉走%20(Live).mp3" type="audio/mp3">
+</audio>
+<picture>
+    <source media="(max-width:320px)" srcset="images-test/test-320px.jpg">
+    <source media="(min-width:321px)" srcset="images-test/test-480px.jpg">
+    <img src="images-test/test-480px.jpg" alt="it is a test of picture.">
+</picture>
+<dl>
+    <dt>培根</dt>
+      <dd>整个世界的粘合剂</dd>
+    <dt>鸡蛋</dt>
+      <dd>一块蛋糕的粘合剂</dd>
+    <dt>咖啡</dt>
+       <dd>一种浅棕色的饮料.</dd>
+       <dd>可以在清晨带来活力</dd>
+</dl>
+<p>According to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+    <cite>MDN blockquote page</cite></a>:
+</p>
+
+<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+    <p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block
+        Quotation Element</em>) indicates that the enclosed text is an extended quotation.</p>
+</blockquote>
+
+<p>The quote element — <code>&lt;q&gt;</code> — is <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">intended
+    for short quotations that don't require paragraph breaks.</q> -- <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+    <cite>MDN q page</cite></a>.</p>
+
+<!-- 标准简单日期 -->
+<time datetime="2016-01-20">20 January 2016</time>
+<!-- 只包含年份和月份-->
+<time datetime="2016-01">January 2016</time>
+<!-- 只包含月份和日期 -->
+<time datetime="01-20">20 January</time>
+<!-- 只包含时间，小时和分钟数 -->
+<time datetime="19:30">19:30</time>
+<!-- 还可包含秒和毫秒 -->
+<time datetime="19:30:01.856">19:30:01.856</time>
+<!-- 日期和时间 -->
+<time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+<!-- 含有时区偏移值的日期时间 -->
+<time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time>
+<!-- 调用特定的周 -->
+<time datetime="2016-W04">The fourth week of 2016</time>
+</body>
+</html>
