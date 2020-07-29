@@ -2,14 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>沉默中的大多数</title>
+    <title>background_box</title>
+    <style>
+
+        p {
+            border: .8em darkviolet;
+            border-style: dotted double;
+            margin: 1em 0;
+            padding: 1.4em;
+            background: linear-gradient(60deg, red, yellow, red, yellow, red);
+            font: 900 1.2em sans-serif;
+            text-decoration: underline;
+        }
+
+        .border-box { background-clip: border-box; }
+        .padding-box { background-clip: padding-box; }
+        .content-box { background-clip: content-box; }
+
+        .text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+    </style>
 </head>
 <body>
-   <h1>沉默中的大多数</h1>
-   <hr>
-  <p>作者：<a href="https://www.baidu.com/" title="去了解一下他吧" target="_blank">王小波</a></p>
-  <img src="images\33.jpg" title="这是推荐这本书的他" alt="成功" width="100%">
-   <p><u>自从我成人以来，</u><br>所见到的一切全是<del>颠倒着的。</del></p>
-   <p>在一个喧嚣的话语圈下面，<br>始终有个<sup>n</sup>沉默的大多数。</p>
+<p class="border-box">The background extends behind the border.</p>
+<p class="padding-box">The background extends to the inside edge of the border.</p>
+<p class="content-box">The background extends only to the edge of the content box.</p>
+<p class="text">The background is clipped to the foreground text.</p>
 </body>
 </html>

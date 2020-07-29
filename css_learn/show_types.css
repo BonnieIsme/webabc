@@ -1,0 +1,37 @@
+    .One {
+        display: block;
+        border: 10px red solid;
+        background-color: #ffe4b2;
+    }
+
+    .Two {
+        display: inline-flex;
+        list-style-type: none;
+        background-color: #9ACD32;
+    }
+
+    .Three {
+        display: block;
+        background-color: #66e9ff;
+    }
+
+    .s1 {
+        display: inline;
+        background-color: grey;
+    }
+
+    span {
+        background-color: #E83828;
+    }
+
+    .a {
+        background-color: orange;
+    }
+
+    .b {
+        background-color: darkorange;
+    }
+
+    .c {
+        background-color: orangered;
+    }

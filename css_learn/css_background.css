@@ -1,0 +1,63 @@
+    * {
+        margin: 0;
+    }
+
+    .background-image-padding {
+        padding: 100px;
+        border: darkslategrey 10px solid;
+        background-clip: padding-box;
+        background-image: url(../test1/images/大图1.jpg),
+                          linear-gradient(rgba(0, 90, 255, .5),rgba(225, 225, 0, .5));
+
+    }
+
+    .content {
+        color: wheat;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .background-image-border {
+        font-size: 25px;
+        color: wheat;
+        height: 100px ;
+        line-height: 100px;
+        text-align: center;
+        border: 10px navajowhite dotted;
+        background-clip: border-box;
+        background-image: url(../test1/images/大图1.jpg),
+                          linear-gradient(rgb(225, 100, 0),rgb(220, 50, 0));
+    }
+
+    .background-image-text {
+        font-size: 25px;
+        height: 100px ;
+        line-height: 100px;
+        text-align: center;
+        background-image: url(../test1/images/大图4.jpg),
+        linear-gradient(navajowhite,orange);
+
+        background-clip: content-box; /* 此处教程中本是text，但这里用content-box更好一点 */
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .background-origin {
+        border: dimgrey 10px solid;
+        padding: 80px;
+        background-image: url(../test1/images/动图1.gif);
+        background-repeat: no-repeat;
+        background-origin: padding-box; /* 共有三种选择：border-box, padding-box, content-box 不同的选择，图像的起点不一样，border-box和padding-box比，图像更近于border-box */
+    }
+
+    /* 当视口小于30em时，背景为灰色，大于等于30em时，背景为白色 */
+    body {
+        background-color: grey;
+    }
+
+    @media (min-width: 30em) {
+        body {
+            background-color: white;
+        }
+
+    }
