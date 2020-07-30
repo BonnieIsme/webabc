@@ -1,0 +1,23 @@
+    .visiable {
+        margin-bottom: 500px;
+        border:10px black solid;
+        width: 100px;
+        height: 200px;
+        overflow: visible;
+    }
+
+    .hidden {
+        border:10px black solid;
+        width: 100px;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .overflow-scroll {
+        border:10px black solid;
+        width: 100px;
+        height: 200px;
+        overflow: scroll; /* 给溢出内容加一个滚动条，滚动浏览 */
+                          /* 仅y方向滚动，则：overflow-y:scroll; x方向同理，overflow-x:scroll */
+                          /* overflow:auto 当有溢出时，自动加滚动条 */
+    }

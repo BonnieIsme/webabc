@@ -5,6 +5,7 @@
     .background-image-padding {
         padding: 100px;
         border: darkslategrey 10px solid;
+        border-radius: 10px;
         background-clip: padding-box;
         background-image: url(../test1/images/大图1.jpg),
                           linear-gradient(rgba(0, 90, 255, .5),rgba(225, 225, 0, .5));
@@ -60,4 +61,68 @@
             background-color: white;
         }
 
+    }
+
+    /* 调整背景图像大小 */
+
+    /* 其图大小随视口变化，保留原来比例 */
+    .cover {
+        height: 1000px;
+        background-image: url(../test1/images/动图1.gif),
+                          linear-gradient(yellow, orange);
+        background-size: cover;
+
+    }
+
+    /* 大小随盒子而定，不随视口变化，保留自己的比例 */
+    .contain {
+        height: 500px;
+        background-image: url(../test1/images/动图1.gif),
+        linear-gradient(yellow, orange);
+        background-size: contain;
+        background-repeat: no-repeat;
+
+    }
+
+    /* 背景图像定位 （默认背景位置为左上角，(0,0)）*/
+    .background-position {
+        height: 50px;
+        background-image: url(../test1/images/动图1.gif),
+                          linear-gradient(rgb(255, 0, 80),rgb(150, 0, 255));
+        background-repeat: no-repeat;
+        background-position: top center;
+
+    }
+
+    .scroll {
+        height: 500px;
+        background-image: url(../test1/images/动图1.gif),
+        linear-gradient(yellow, orange);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+    .fixed {
+        height: 1000px;
+        background-image: url(../test1/images/动图1.gif),
+        linear-gradient(yellow, orange);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .object-fit-cover {
+        border: 10px inset antiquewhite;
+        object-fit: cover;
+    }
+
+    .object-fit-contain {
+        border: 10px inset lightblue;
+        object-fit: contain;   /* 试试fill值，它可以让图像充满盒子，但是不会维持比例 */
     }

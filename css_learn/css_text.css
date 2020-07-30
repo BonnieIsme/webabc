@@ -1,0 +1,38 @@
+    .mode-tb {
+        writing-mode: horizontal-tb;
+        inline-size:1000px; /* 横向书写模式下，映射到width的属性——内联尺寸(inline-size) */
+                            /* 映射到height的属性——块级尺寸（block-size） */
+
+    }
+
+    .mode-rl {
+        writing-mode: vertical-rl;
+        block-size: 100px;
+
+    }
+
+    .mode-lr {
+        writing-mode: vertical-lr;
+        block-size: 100px;
+    }
+
+    .box {
+        border-radius: 5px;
+        border: 5px solid rgba(0, 0, 0, .5);
+        writing-mode: horizontal-tb;
+        inline-size: 200px;
+    }
+
+    img {
+        float: left;
+        margin-inline-end: 10px;
+        margin-block-end: 10px;
+
+    }
+
+    .View {
+        border: 5px solid silver;
+        font-size: 25vh;
+        inline-size: 100vw;
+        block-size: 80vh;
+    }

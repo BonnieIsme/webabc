@@ -21,6 +21,7 @@
     }
 
     span {
+        margin: 20px; /* 内联盒子的内外边距盒边框虽然都生效，但是效果明显的是外边距，其它会重叠 */
         background-color: #E83828;
     }
 
@@ -34,4 +35,9 @@
 
     .c {
         background-color: orangered;
+    }
+
+    .inline-block {
+        display: inline-block; /* inline-block 可以让块成行排列 */
+        background-color: #ffe4b2;
     }
