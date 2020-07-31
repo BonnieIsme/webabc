@@ -1,0 +1,33 @@
+    /* legend用于表示其父元素fieldset的内容标题 */
+    legend {
+        background-color: rgba(0, 0, 0, .5);
+        font-size: 1em;
+        color: wheat;
+    }
+
+    label {
+        color: grey;
+        font-size: 1em;
+    }
+
+    input {
+        margin: 1em;
+    }
+
+    fieldset {
+        min-height: 100px;
+    }
+
+    textarea {
+        margin-top: 10px;
+        border: 2px solid #ccc;
+        box-shadow: 2px 1px 1px #999;
+    }
+
+    .select-box {
+        background-color: rgba(0, 0, 0, .5);
+        color: wheat;
+        font-size: 1em;
+        max-width: 130px;
+        display: inline-block;
+    }

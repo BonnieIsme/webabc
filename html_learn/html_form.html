@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="html_form.css">
+    <title>学习表单</title>
+</head>
+<body>
+    <form>
+        <!-- 默认情况下 <fieldset> 会有 2px groove 的边界围绕着内容，还有一个默认的小的内边距，还有 min-inline-size: min-content  -->
+        <fieldset>
+            <legend>Choose your favorite monster</legend>
+
+            <input type="radio" id="Kraken" name="monster" checked>
+            <label for="Kraken">Kraken</label>
+            <br>
+
+            <input type="radio" id="Sasquatch" name="monster" >
+            <label for="Sasquatch">Sasquatch</label>
+            <br>
+
+            <input type="radio" name="monster" id="Monthman">
+            <label for="Monthman">Monthman</label>
+
+        </fieldset>
+
+        <fieldset disabled>
+            <legend>Disabled fieldset</legend>
+
+            <label for="loginname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login:</label>
+            <input type="text" id="loginname" value="Bonnie">
+            <br>
+
+            <label for="pwd">password:</label>
+            <input type="password" id="pwd" value="112233">
+        </fieldset>
+
+        <fieldset>
+            <legend>Name(4 to 8)</legend>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="your name" minlength="4" maxlength="8">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email"placeholder="your email" multiple> <!-- multiple让用户输入多个地址，用，号隔开-->
+            <br>
+
+            <label for="tel">&nbsp;&nbsp;&nbsp;&nbsp;TEL:</label>
+            <input type="tel" id="tel" name="tel" placeholder="your telephone number">
+
+
+            <!-- 数字类型 -->
+            <label for="number">Your age:</label>
+            <input type="number" id="number" name="number" min="18" max="40" step="1">
+
+            <br>
+            <!-- 滑块类型 -->
+            <label for="range">音量大小:</label>
+            <input type="range" id="range" name="range" min="0" max="100" step="5">
+            <span class="count"></span> <!-- 运用简单的Javascript标出滑块的值 -->
+        </fieldset>
+
+
+        <fieldset>
+            <legend>It is about 'textarea' </legend>
+            <label for="text">Tell your story:&nbsp;</label><br>
+            <textarea id="text" name="text" rows="5" cols="30">It was a dark and stormy night...
+            </textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Ice-cream(datalist)</legend>
+            <img src="../test1/images/动图1.gif">
+            <label for="ice-cream-choice">Choose your ice-cream:</label>
+            <input list="ice-cream-flavor" id="ice-cream-choice" placeholder="choose your ice-cream">
+            <datalist id="ice-cream-flavor">
+                <option value="strawberry"></option>
+                <option value="chocolate"></option>
+                <option value="mint"></option>
+            </datalist>
+            <input type="submit" value="买它">
+        </fieldset>
+
+        <fieldset>
+            <legend>select box and autocomplete box</legend>
+            <div class="select-box">
+                <p>FOR SELECT BOX:</p><br>
+                <!-- input? -->
+                <select id="groups" name="groups" > <!--  multiple代表可多选，去掉只能选一个 -->
+                    <optgroup label="fruit">
+                        <option>Banana</option>
+                        <option>Cherry</option>
+                        <option>Lemon</option>
+                    </optgroup>
+
+                    <optgroup label="vegetables">
+                        <option>Carrot</option>
+                        <option>Eggplant</option>
+                        <option>Potato</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="select-box">
+                <p>FOR SELECT BOX:</p><br>
+                <!-- input? -->
+                <select id="groups2" name="groups" multiple> <!--  multiple代表可多选，去掉只能选一个 -->
+                    <optgroup label="fruit">
+                        <option>Banana</option>
+                        <option>Cherry</option>
+                        <option>Lemon</option>
+                    </optgroup>
+
+                    <optgroup label="vegetables">
+                        <option>Carrot</option>
+                        <option>Eggplant</option>
+                        <option>Potato</option>
+                    </optgroup>
+                </select>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>DATE AND TIME</legend>
+
+            <!-- 本地时间（没有任何特定的时区信息） -->
+            <input type="datetime-local" name="datetime" id="datetime">
+
+            <!-- 月 -->
+            <input type="month" name="month" id="month">
+
+            <!-- 时间 -->
+            <input type="time" name="time" id="time">
+
+            <!-- 星期 -->
+            <input type="week" name="week" id="week">
+
+            <!-- 所有的日期和时间都可以用min和max来约束 -->
+            <input type="date" name="myDate" id="myDate" min="2018-06-07" max="2022-06-02">
+
+            <br>
+            <!-- 拾色器 -->
+            <input type="color" name="color" id="color" >
+
+            <!-- 文件选择器 -->
+            <input type="file" name="file" id="file" accept="image/*" multiple>
+
+            <!-- 隐藏内容 -->
+            <input type="hidden" name="hideIt" id="hide" value="213311">
+
+            <br>
+            <!-- 图像按钮,行为就像submit一样，但是发送的不是值而是点击处的X和Y坐标，相对于图像的-->
+            <label for="im">我是图像按钮</label>
+            <br>
+            <input type="image" id="im" src="../test1/images/cat1.jpg" width="200px">
+        </fieldset>
+
+        <fieldset>
+            <legend>Meter</legend>
+            <!-- optimum表哪一段最优先，当前值处于优先部分为绿，平均部分为黄，糟糕为红 -->
+            <meter min="0" max="100" low="60" high="80" optimum="85" value="87">87</meter>
+        </fieldset>
+    </form>
+
+
+    <!-- action表示到哪里，method表示是送还是取 -->
+    <form action="../test1/test11.html" method="POST">
+        <div class="say">
+            <label for="say">what would you wanna say?</label>
+            <input name="say" id="say" value="Hi,my dear friends!I am Bonnie">
+
+        </div>
+
+        <div class="to">
+            <label for="to">WHO do you want to say hi to?</label>
+            <input id="to" name="to" value="Sean">
+
+        </div>
+
+        <button type="submit">
+            send it!
+        </button>
+
+    </form>
+
+
+    <hr>
+    <!-- output -->
+    <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="text" name="b" value="50">+<input type="number" name="a" value="10">
+        =<output name="result"></output>
+
+    </form>
+
+
+</body>
+    <!-- 此处主要对滑块的值进行展现 -->
+    <script type="text/javascript">
+        var r = document.querySelector('#range');
+        var c = document.querySelector('.count');
+
+        c.textContent = r.value;
+
+        r.oninput = function () {
+            c.textContent  = r.value;
+        }
+    </script>
+</html>

@@ -4,6 +4,17 @@
     <meta charset="utf-8">
     <title>&lt;title&gt; element</title>
 </head>
+<style>
+    /* 自定义一种新字体 */
+    @font-face {
+        font-family: "Bitstream Vera Serif Bold";
+        src: url("http://developer.mozilla.org/@api/deki/files/2934/=VeraSeBd.ttf");
+    }
+
+    .font {
+        font-family: "Bitstream Vera Serif Bold",serif;
+    }
+</style>
 <body>
 <h1>&lt;h1&gt; element</h1>
 <p>Japanese example: ご飯が熱い。</p>
@@ -65,7 +76,7 @@
 <!-- 调用特定的周 -->
 <time datetime="2016-W04">The fourth week of 2016</time>
 
-
+<p class="font">This is Bitstream Vera Serif Bold</p>
 
 </body>
 </html>
