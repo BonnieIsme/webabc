@@ -1,0 +1,17 @@
+    @font-face {
+    font-family: 'ma_shan_zhengregular';
+    src: url("fonts/mashanzheng-regular-webfont.ttf") format('truetype'),
+    url('fonts/mashanzheng-regular-webfont.woff2') format('woff2'),
+    url('fonts/mashanzheng-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    }
+
+    .font-face {
+        font-family: ma_shan_zhengregular,serif;
+    }
+
+    .online {
+        font-family: 'Ma Shan Zheng', cursive;
+    }

@@ -1,0 +1,263 @@
+    * {
+        margin :0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #222222;
+        height: 30px;
+        color: white;
+    }
+
+    .top-box {
+        background-color: #66e9ff;
+        width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .form-search {
+        background-color: #9ACD32;
+        height: 90px;
+
+    }
+
+    .nav-box {
+        background-color: #3a768f;
+        height: 45px;
+        border-top: 1px white solid;
+        border-bottom: 1px white solid;
+        padding: 14px 0;
+    }
+
+    .main {
+        width: 1200px;
+        margin: 0 auto;
+        padding-top: 10px;
+        background-color: #ffe4b2;
+    }
+
+    .ad-picture-one {
+        display: inline-block;
+        margin-left: 10px;
+    }
+    .ad-picture-one img {
+        width: 1030px;
+        height: 100px;
+
+    }
+
+    .ad-picture-two-three {
+        display: inline-block;
+    }
+
+    .two img, .three img {
+        width: 144px;
+        height: 47px;
+        display: block;
+
+    }
+
+    .two img {
+        margin-bottom: 6px;
+    }
+
+    .hot-topic {
+        width: 1180px;
+        height: 1142px;
+        margin: 16px auto 0;
+        background-color: #b0adff;
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .hot-left {
+        width: 320px;
+        height: 1142px;
+        background-color: orangered;
+    }
+
+    .hot-middle {
+        width: 500px;
+        height: 1142px;
+        background-color: mediumseagreen;
+    }
+
+    .hot-right {
+        width: 300px;
+        height: 1142px;
+        background-color: dodgerblue;
+    }
+
+    .ad-hot-pic img {
+        width: 1180px;
+        height: 100px;
+        display: block;
+        margin: 10px auto 0;
+    }
+
+    .news_sections {
+        margin: 0 auto;
+        background-color: #feffa2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .news_sections section{
+        width: 1180px;
+        height: 483px;
+        margin: 25px auto 0;
+        border-top: 1px solid orange;
+        background-color: #c0ff84;
+    }
+
+    .ad-news-section-one {
+        width: 1180px;
+        height: 110px;
+        margin: 10px 10px 0;
+        border: 1px solid red;
+        background-color: #33ff95;
+    }
+
+    .ad-news-section-one img {
+        width: 8%;
+        height: 100%;
+    }
+
+    .other-news {
+        width: 1180px;
+        margin: 25px 10px 0;
+        background-color: #3a768f;
+        display: flex;
+    }
+
+    .contain-one {
+        width: 900px;
+        padding-right: 10px;
+        background-color: #ff6653;
+
+
+    }
+
+    .contain-two {
+        width: 300px;
+        background-color: #9ACD32;
+
+    }
+
+    .ad-other-news {
+        width: 850px;
+        height: 110px;
+        border: 1px silver solid;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .ad-other-news .ad-item figure img {
+        width: 100px;
+        height: 90px;
+    }
+
+    .ad-other-news .ad-item figure {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .content-parts {
+        width: 850px;
+        display: flex;
+        flex-flow: row wrap;
+        background-color: #66e9ff;
+    }
+
+
+    .content-parts section {
+        flex: 410px;
+        height: 436px;
+        background-color: pink;
+        margin-bottom: 20px;
+        border: 1px solid red;
+
+    }
+
+    .content-parts section:nth-child(odd) {
+        margin-right: 15px;
+    }
+
+    .ad-other img {
+        width: 850px;
+        height: 100px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .ad-contain-two a img {
+        width: 300px;
+        height: 300px;
+        position: relative;
+        border: 1px red solid;
+    }
+
+    .list {
+        width: 260px;
+        margin-top: 10px;
+        padding: 10px 20px;
+        overflow: hidden;
+        background-color: #ffe4b2;
+    }
+
+    .list a img {
+        width: 270px;
+        height: 135px;
+        position:  center;
+    }
+
+    .slip-ad {
+        width:300px ;
+        height: 300px;
+        border: 1px solid grey;
+    }
+
+    .hobby {
+        width: 300px;
+        height: 140px;
+        border: 1px grey solid;
+    }
+
+    .hobby-items {
+        width: 300px;
+        height: 105px;
+        border: 1px grey solid;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .hobby-items .little-contain {
+        flex: 140px;
+        height: 105px;
+        border: 1px grey solid;
+        background-image: url(../test1/images/carrot.jpg);
+        background-size: cover;
+        position: center;
+    }
+
+    .hobby .little-contain p {
+        background-color:rgba(0, 0, 0, .5) ;
+        color: white;
+        position: center;
+    }
+
+    .sohu-bottom {
+        width: 1178px;
+        padding-top: 16px;
+        border: 1px solid grey;
+        margin: 0 auto;
+    }
+
+    footer {
+        text-align: center;
+    }
