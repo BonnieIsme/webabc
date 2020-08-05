@@ -15,7 +15,8 @@ header {
     background-color: #222222;
     height: 30px;
     color: #ffffff;
-    background-clip: border-box;
+    min-width: 1200px;
+
 }
 
 .header-top {
