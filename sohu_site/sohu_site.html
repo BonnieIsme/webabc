@@ -1,196 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-size: 16px">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="sohu_site.css" type="text/css">
     <title>搜狐</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="sohu_site.css" type="text/css">
+
 </head>
 <body>
     <header>
-        <div class="header-box">
-            <ul>
-                <li class="header-item"><a href="#">设为默认首页</a></li>
-                <li class="header-item"><a href="#">下载APP</a></li>
-                <li class="header-item login">
-                    <a href="#">
-                        <svg t="1596531526620" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1268" width="16" height="16"><path d="M512 144a181.333333 181.333333 0 1 1-181.333333 181.333333 181.333333 181.333333 0 0 1 181.333333-181.333333m0-64a245.333333 245.333333 0 1 0 245.333333 245.333333 245.333333 245.333333 0 0 0-245.333333-245.333333z" fill="#8a8a8a" p-id="1269"></path><path d="M512 570.666667a341.706667 341.706667 0 0 1 341.333333 341.333333h64a405.333333 405.333333 0 0 0-810.666666 0h64a341.706667 341.706667 0 0 1 341.333333-341.333333zM106.666667 912h64a32 32 0 0 1-32 32 32 32 0 0 1-32-32zM853.333333 912h64a32 32 0 0 1-32 32 32 32 0 0 1-32-32z" fill="#8a8a8a" p-id="1270"></path></svg>
-                        登录
-                    </a>
-                </li>
-            </ul>
+        <div class="header-top">
+            <div class="header-box">
+                <ul>
+                    <li class="set"><a href="#">设为默认首页</a></li>
+                    <li class="download"><a href="#">下载APP</a></li>
+                    <li class="login">
+                        <a href="#">
+                            <svg t="1596531526620" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1268" width="16" height="16"><path d="M512 144a181.333333 181.333333 0 1 1-181.333333 181.333333 181.333333 181.333333 0 0 1 181.333333-181.333333m0-64a245.333333 245.333333 0 1 0 245.333333 245.333333 245.333333 245.333333 0 0 0-245.333333-245.333333z" fill="#8a8a8a" p-id="1269"></path><path d="M512 570.666667a341.706667 341.706667 0 0 1 341.333333 341.333333h64a405.333333 405.333333 0 0 0-810.666666 0h64a341.706667 341.706667 0 0 1 341.333333-341.333333zM106.666667 912h64a32 32 0 0 1-32 32 32 32 0 0 1-32-32zM853.333333 912h64a32 32 0 0 1-32 32 32 32 0 0 1-32-32z" fill="#8a8a8a" p-id="1270"></path></svg>
+                            登录
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
+
     </header>
 
     <section class="top-box">
 
-        <div class="top-sohu">
-            <a href="https://www.sohu.com/?spm=smpc.home.top-logo.1.1596503992276rH1QOEl" target="_blank"><img src="sohu-pics/sohu.png" width="145" height="95"></a>
-        </div>
-
         <div class="form-search">
 
-                <form action="#" method="post" name="searchForm">
-                    <fieldset>
-                        <input type="search" id="searchID" name="search" placeholder="大家都在搜：又一华裔天才火了">
-                        <button type="submit" id="searchButton" name="search">
-                            <svg t="1596525459442" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3163" width="20" height="20">
-                                <path d="M797.525333 752.266667c62.069333-72.736 97.28-165.002667 97.28-262.186667C894.816 266.528 713.621333 85.333333 490.08 85.333333 266.538667 85.333333 85.333333 266.538667 85.333333 490.069333 85.333333 713.610667 266.538667 894.826667 490.069333 894.826667a404.693333 404.693333 0 0 0 118.208-17.546667 32 32 0 0 0-18.666666-61.216 340.693333 340.693333 0 0 1-99.541334 14.762667C301.888 830.816 149.333333 678.261333 149.333333 490.069333 149.333333 301.888 301.888 149.333333 490.069333 149.333333 678.261333 149.333333 830.826667 301.888 830.826667 490.069333c0 89.28-35.381333 173.696-97.141334 237.322667a36.992 36.992 0 0 0 0.384 51.925333l149.973334 149.973334a32 32 0 0 0 45.258666-45.248L797.525333 752.266667z" p-id="3164" fill="#707070"></path>
-                            </svg>
-                        </button>
-                    </fieldset>
+            <div class="top-sohu">
+                <a href="https://www.sohu.com/?spm=smpc.home.top-logo.1.1596503992276rH1QOEl" target="_blank"><img src="sohu-pics/sohu.png" width="145" height="95"></a>
+            </div>
 
-                </form>
+            <form action="#" method="post" name="searchForm">
+                <fieldset>
+                    <input type="search" id="searchID" name="search" placeholder="大家都在搜：又一华裔天才火了">
+                    <button type="submit" id="searchButton" name="search">
+                        <svg t="1596525459442" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3163" width="20" height="20">
+                           <path d="M797.525333 752.266667c62.069333-72.736 97.28-165.002667 97.28-262.186667C894.816 266.528 713.621333 85.333333 490.08 85.333333 266.538667 85.333333 85.333333 266.538667 85.333333 490.069333 85.333333 713.610667 266.538667 894.826667 490.069333 894.826667a404.693333 404.693333 0 0 0 118.208-17.546667 32 32 0 0 0-18.666666-61.216 340.693333 340.693333 0 0 1-99.541334 14.762667C301.888 830.816 149.333333 678.261333 149.333333 490.069333 149.333333 301.888 301.888 149.333333 490.069333 149.333333 678.261333 149.333333 830.826667 301.888 830.826667 490.069333c0 89.28-35.381333 173.696-97.141334 237.322667a36.992 36.992 0 0 0 0.384 51.925333l149.973334 149.973334a32 32 0 0 0 45.258666-45.248L797.525333 752.266667z" p-id="3164" fill="#707070"></path>
+                        </svg>
+                    </button>
+                </fieldset>
+
+            </form>
 
 
+            <div class="top-right">
                 <div class="top-items">
                     <ul>
                         <li class="top-item">
                             <a href="https://mp.sohu.com/mpfe/v3/login?spm=smpc.home.top-logo.2.1596503992276rH1QOEl" target="_blank">
-                                <div class="top-pic"><img src="sohu-pics/souhu.png" width="30" height="30"></div>
-                                <div class="title">搜狐号</div>
-                            </a>
+                                <div class="top-pic"><img src="sohu-pics/souhu_hao.png" width="30" height="30"></div></a>
+
+                            <div class="title go"><a href="#">搜狐号</a></div>
+
+
 
                         </li>
                         <li class="top-item">
                             <a href="https://www.sogou.com/" target="_blank">
-                                <div class="top-pic"><img src="sohu-pics/sougouicon.png" width="30" height="30"></div>
-                                <div class="title">搜狗搜索</div>
-                            </a>
+                                <div class="top-pic"><img src="sohu-pics/sougou_search.png" width="30" height="30"></div></a>
+
+                                <div class="title go"><a href="#">搜狗搜索</a></div>
+
 
                         </li>
                         <li class="top-item">
                             <a href="https://mail.sohu.com/fe/?spm=smpc.home.top-logo.4.15965311168897SNOD1x#/login" target="_blank">
-                                <div class="top-pic"><img src="sohu-pics/souhu_mail.png" width="30" height="30"></div>
-                                <div class="title">搜狐邮箱</div>
-                            </a>
+                                <div class="top-pic"><img src="sohu-pics/souhu_email.png" width="30" height="30"></div></a>
+                                <div class="title"><a href="#">搜狐邮箱</a></div>
+
                         </li>
                     </ul>
                 </div>
-
-
-
+            </div>
         </div>
 
-        <div class="nav-box">
-            <nav>
-                <ul>
-                    <li class="column">
-                        <table>
-                            <colgroup span="3" width="60"></colgroup>
-                            <tr>
-                                <td><a href="https://news.sohu.com/?spm=smpc.home.top-nav.1.1596535048838KB8C2Jy">新闻</a></td>
-                                <td><a href="https://mil.sohu.com/?spm=smpc.home.top-nav.2.1596535048838KB8C2Jy">军事</a></td>
-                                <td><a href="https://www.sohu.com/subject?spm=smpc.home.top-nav.3.1596535048838KB8C2Jy">专题</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="https://business.sohu.com/?spm=smpc.home.top-nav.4.1596535048838KB8C2Jy">财经</a></td>
-                                <td><a href="https://business.sohu.com/994?spm=smpc.home.top-nav.5.1596535048838KB8C2Jy">宏观</a></td>
-                                <td><a href="https://business.sohu.com/998?spm=smpc.home.top-nav.6.1596535048838KB8C2Jy">理财</a></td>
-                            </tr>
-                        </table>
-                    </li>
-                    <li class="column">
-                        <table>
-                            <colgroup span="3" width="60"></colgroup>
-                            <tr>
-                                <td><a href="https://sports.sohu.com/?spm=smpc.home.top-nav.7.1596535048838KB8C2Jy">体育</a></td>
-                                <td><a href="https://sports.sohu.com/s/nba?spm=smpc.home.top-nav.8.1596535048838KB8C2Jy">NBA</a></td>
-                                <td><a href="https://sports.sohu.com/s/cba?spm=smpc.home.top-nav.9.1596535048838KB8C2Jy">CBA</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="https://cq.focus.cn/?useIp=true">房产</a></td>
-                                <td><a href="https://cq.focus.cn/loupan/">新房</a></td>
-                                <td><a href="http://cq.home.focus.cn/">家居</a></td>
-                            </tr>
-                        </table>
-                    </li>
-                    <li class="column">
-                        <table>
-                            <colgroup span="2" width="60"></colgroup>
-                            <col width="70">
-                            <tr>
-                                <td><a href="https://yule.sohu.com/?spm=smpc.home.top-nav.13.1596535048838KB8C2Jy">娱乐</a></td>
-                                <td><a href="https://tv.sohu.com/?spm=smpc.home.top-nav.14.1596535048838KB8C2Jy">视频</a></td>
-                                <td><a href="https://tv.sohu.com/drama/?spm=smpc.home.top-nav.15.1596535048838KB8C2Jy">电视剧</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="http://auto.sohu.com/?spm=smpc.home.top-nav.16.1596535048838KB8C2Jy">汽车</a></td>
-                                <td><a href="http://db.auto.sohu.com/home/?spm=smpc.home.top-nav.17.1596535048838KB8C2Jy">买车</a></td>
-                                <td><a href="http://auto.sohu.com/newenergy/index.shtml?spm=smpc.home.top-nav.18.1596535048838KB8C2Jy">新能源</a></td>
-                            </tr>
-                        </table>
-                    </li>
-                    <li class="column">
-                        <table>
-                            <colgroup span="3" width="60"></colgroup>
-                            <tr>
-                                <td><a href="https://fashion.sohu.com/?spm=smpc.home.top-nav.19.1596535048838KB8C2Jy">时尚</a></td>
-                                <td><a href="https://travel.sohu.com/?spm=smpc.home.top-nav.20.1596535048838KB8C2Jy">旅游</a></td>
-                                <td><a href="https://baobao.sohu.com/?spm=smpc.home.top-nav.21.1596535048838KB8C2Jy">母婴</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="https://it.sohu.com/?spm=smpc.home.top-nav.22.1596535048838KB8C2Jy">科技</a></td>
-                                <td><a href="https://learning.sohu.com/?spm=smpc.home.top-nav.23.1596535048838KB8C2Jy">教育</a></td>
-                                <td><a href="https://health.sohu.com/?spm=smpc.home.top-nav.24.1596535048838KB8C2Jy">健康</a></td>
-                            </tr>
-                        </table>
-                    </li>
-                    <li class="column">
-                        <table>
-                            <colgroup span="3" width="60"></colgroup>
-                            <tr>
-                                <td><a href="https://chihe.sohu.com/?spm=smpc.home.top-nav.25.1596535048838KB8C2Jy">美食</a></td>
-                                <td><a href="http://cul.sohu.com/?spm=smpc.home.top-nav.26.1596535048838KB8C2Jy">文化</a></td>
-                                <td><a href="http://history.sohu.com/?spm=smpc.home.top-nav.27.1596535048838KB8C2Jy">历史</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="https://astro.sohu.com/?spm=smpc.home.top-nav.28.1596535048838KB8C2Jy">星座</a></td>
-                                <td><a href="https://www.sohu.com/topic/acg?spm=smpc.home.top-nav.29.1596535048838KB8C2Jy">动漫</a></td>
-                                <td><a href="https://gmxc.sohu.com/2020?_trans_=000019_pcsydhl&spm=smpc.home.top-nav.30.1596535048838KB8C2Jy">校草</a></td>
-                            </tr>
-                        </table>
-                    </li>
-                    <li class="column">
-                        <table>
-                            <col width="60">
-                            <col width="70">
-                            <col width="60">
-                            <tr>
-                                <td><a href="https://mail.sohu.com/?spm=smpc.home.top-nav.31.1596535048838KB8C2Jy">邮箱</a></td>
-                                <td><a href="https://ie.sogou.com/">浏览器</a></td>
-                                <td><a href="http://blog.sohu.com/?spm=smpc.home.top-nav.33.1596535048838KB8C2Jy">博客</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="https://map.sogou.com/">地图</a></td>
-                                <td><a href="https://pinyin.sogou.com/">输入法</a></td>
-                                <td><a href="http://caipiao.sohu.com/?spm=smpc.home.top-nav.36.1596535048838KB8C2Jy">彩票</a></td>
-                            </tr>
-                        </table>
-                    </li>
-                    <li class="last-column">
-                        <table>
-                            <col width="50">
-                            <col width="50">
+        <nav>
+            <div class="nav-box">
+                <div class="nn-box">
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>新闻</strong></a></li>
+                        <li class="nav-item"><a href="#">军事</a></li>
+                        <li class="nav-item"><a href="#">专题</a></li>
+                    </ul>
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>财经</strong></a></li>
+                        <li class="nav-item"><a href="#">宏观</a></li>
+                        <li class="nav-item"><a href="#">理财</a></li>
+                    </ul>
+                </div>
+                <div class="nn-box">
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>体育</strong></a></li>
+                        <li class="nav-item"><a href="#">NBA</a></li>
+                        <li class="nav-item"><a href="#">CBA</a></li>
+                    </ul>
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>房产</strong></a></li>
+                        <li class="nav-item"><a href="#">新房</a></li>
+                        <li class="nav-item"><a href="#">家居</a></li>
+                    </ul>
+                </div>
+                <div class="nn-box">
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>娱乐</strong></a></li>
+                        <li class="nav-item"><a href="#">视频</a></li>
+                        <li class="nav-item"><a href="#">电视剧</a></li>
+                    </ul>
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>汽车</strong></a></li>
+                        <li class="nav-item"><a href="#">买车</a></li>
+                        <li class="nav-item"><a href="#">新能源</a></li>
+                    </ul>
+                </div>
+                <div class="nn-box">
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>时尚</strong></a></li>
+                        <li class="nav-item"><a href="#">旅游</a></li>
+                        <li class="nav-item"><a href="#">母婴</a></li>
+                    </ul>
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>科技</strong></a></li>
+                        <li class="nav-item"><a href="#">教育</a></li>
+                        <li class="nav-item"><a href="#">健康</a></li>
+                    </ul>
+                </div>
+                <div class="nn-box">
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>美食</strong></a></li>
+                        <li class="nav-item"><a href="#">文化</a></li>
+                        <li class="nav-item"><a href="#">历史</a></li>
+                    </ul>
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>星座</strong></a></li>
+                        <li class="nav-item"><a href="#">动漫</a></li>
+                        <li class="nav-item"><a href="#">校草</a></li>
+                    </ul>
+                </div>
+                <div class="nn-box">
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>邮箱</strong></a></li>
+                        <li class="nav-item"><a href="#">浏览器</a></li>
+                        <li class="nav-item"><a href="#">博客</a></li>
+                    </ul>
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>地图</strong></a></li>
+                        <li class="nav-item"><a href="#">输入法</a></li>
+                        <li class="nav-item"><a href="#">彩票</a></li>
+                    </ul>
+                </div>
+                <div class="nn-box seven-box">
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>千帆</strong></a></li>
+                        <li class="nav-item"><a href="#">微门户</a></li>
+                        <li class="end nav-item"><a href="#">公益</a></li>
+                    </ul>
+                    <ul>
+                        <li class="nav-item"><a href="#"><strong>畅游</strong></a></li>
+                        <li class="nav-item"><a href="#">17173</a></li>
+                        <li class="end nav-item"><a href="#">政务</a></li>
+                    </ul>
+                </div>
 
-
-                            <tr>
-                                <td><a href="https://qf.56.com/">千帆</a></td>
-                                <td><a href="http://popup.sohu.com/web/?spm=smpc.home.top-nav.38.1596535048838KB8C2Jy">微门户</a></td>
-                                <td><a href="https://gongyi.sohu.com/?spm=smpc.home.top-nav.39.1596535048838KB8C2Jy">公益</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="https://www.changyou.com/index.shtml">畅游</a></td>
-                                <td><a href="https://www.17173.com/">17173</a></td>
-                                <td><a href="http://gov.sohu.com/?spm=smpc.home.top-nav.42.1596535048838KB8C2Jy">政务</a></td>
-                            </tr>
-                        </table>
-                    </li>
-                </ul>
-            </nav>
+            </div>
 
 
 
-        </div>
+        </nav>
     </section>
 
     <main>
@@ -213,6 +192,30 @@
             </div>
 
             <div class="hot-left">
+                <a href="https://www.sohu.com/a/411394529_123753?spm=smpc.home.fspic.1.1596535048838KB8C2Jy&_f=index_focus_0">
+                    <div class="left-one">
+                    <p>“黑格比”过境浙中南部引发强降水</p>
+                </div>
+                </a>
+
+                <div class="left-two">
+                    <figure>
+                        <img src="">
+                        <figcaption></figcaption></figure>
+                    </figure>
+                    <figure>
+                        <img src="">
+                        <figcaption></figcaption></figure>
+                    </figure>
+                    <figure>
+                        <img src="">
+                        <figcaption></figcaption></figure>
+                    </figure>
+                    <figure>
+                        <img src="">
+                        <figcaption></figcaption></figure>
+                    </figure>
+                </div>
 
             </div>
 
@@ -380,7 +383,7 @@
                 </div>
 
                 <div class="list">
-                    <p class="rank">星图排行榜</p>
+                    <p class="little-title">星图排行榜</p>
                     <div class="ranks">
                         <ul>
                             <li>日榜</li>
@@ -410,7 +413,7 @@
                 </div>
 
                 <div class="list">
-                    <p><a href="https://fun.sohu.com/?spm=smpc.home.fun-nav.1.1596535048838KB8C2Jy">搞笑</a></p>
+                    <p class="little-title"><a href="https://fun.sohu.com/?spm=smpc.home.fun-nav.1.1596535048838KB8C2Jy">搞笑</a></p>
                     <div class="fun-pic">
                         <a href="https://www.sohu.com/a/411371336_265446?_f=index_funfocus_4&spm=smpc.home.fun-pics.6.1596535048838KB8C2Jy"><img src="sohu-pics/fun_pic.png" width="300" height="199"></a>
                     </div>
@@ -428,7 +431,7 @@
                 </div>
 
                 <div class="list">
-                    <p>房产热点</p>
+                    <p class="little-title">房产热点</p>
                     <div class="fun-pic">
                         <a href="https://house.focus.cn/loupan/110130989/pingce/ec249702871a7e44.html"><img src="sohu-pics/house.png" width="300" height="199"></a>
                     </div>
@@ -451,7 +454,7 @@
                 </div>
 
                 <div class="list">
-                    <p>房产动态</p>
+                    <p class="little-title">房产动态</p>
 
                     <ul>
                         <li><a>1</a></li>
@@ -476,7 +479,7 @@
                 </div>
 
                 <div class="hobby">
-                    <p>猜你感兴趣</p>
+                    <p class="little-title">猜你感兴趣</p>
                     <div class="hobby-items">
                         <div class="little-contain-one">
                             <p>pcb打样</p>

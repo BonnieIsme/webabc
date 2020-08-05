@@ -3,13 +3,30 @@
     padding: 0;
 }
 
+div a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "PingFang SC",Arial,"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53",simsun,sans-serif;
+}
+
 header {
     background-color: #222222;
     height: 30px;
+    color: #ffffff;
+    background-clip: border-box;
+}
+
+.header-top {
+    width: 1180px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 30px;
+    position: relative;
 }
 
 .header-box {
-    display: inline;
     float: right;
 }
 
@@ -17,45 +34,53 @@ header .header-box ul {
     list-style-type: none;
 }
 
-.header-item{
-    margin: 0 5px;
-    padding-top: 3px;
-    display: inline-block;
-
+.set {
+    color: #a7a7a7;
 }
 
-.login {
-    border-left: 1px solid silver;
-    padding-left: 3px;
-    margin-right: 50px;
-}
-
-header .header-box ul .header-item a {
+.header-box ul li {
+    float: left;
+    display: inline;
+    padding-left: 12px;
     font-size: 14px;
-    font-family: Arial serif;
-    text-decoration: none;
-    color: silver;
+    font-family: "PingFang SC",Arial,"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53",simsun,sans-serif;
 }
 
-header .header-box ul .header-item a:hover {
-    color: white;
-    fill: white;
+.login::before {
+    float: left;
+    content: "";
+    width: 1px;
+    height: 15px;
+    margin-left: 12px;
+    background-color: #a7a7a7;
+    display: inline-block;
+    margin-top: 8px;
+    position: relative;
+    right: 10px;
+}
+
+header .header-box ul li a {
+    text-decoration: none;
+    color: #a7a7a7;
+}
+
+header .header-box ul li a:hover {
+    color: #ffffff;
 }
 
 .top-box {
-    background-color: #66e9ff;
     width: 1180px;
     margin: 0 auto;
  }
 
 .top-sohu {
     position: absolute;
-    top: 0;
-    left: 42px;
+    top: -30px;
+    left: 0;
 }
 
 .form-search {
-    background-color: #9ACD32;
+    position: relative;
     height: 90px;
 
 }
@@ -64,17 +89,27 @@ header .header-box ul .header-item a:hover {
     max-width:550px;
     min-height:40px;
     position: relative;
-    top: 20px;
-    left: 300px;
+    top: 15px;
+    left: 225px;
     border: hidden;
     display: inline-block;
 }
 
-form input[type="search"] {
+#searchID {
     width: 469px;
     height: 40px;
     padding-left: 10px;
-    color: #FDD000;
+    font-size: 14px;
+    border: 1px solid #ececec;
+    border-right: 0;
+    background: #f9f9f9;
+    border-radius: 1px 0 0 1px;
+    box-sizing: border-box;
+    outline: 0; /* 可理解为利于阅读障碍者的选择框 若为none，那么网页的可访问性会降低 */
+}
+
+#searchID:focus {
+    border-color: #FDD000;
 }
 
 form button[type="submit"] {
@@ -90,12 +125,21 @@ form button[type="submit"] {
 
 }
 
+.top-right {
+    position: absolute;
+    right: 0;
+    top: 26px;
+    display: inline-block;
+}
+
 .top-items {
     width: 300px;
-    float: right;
-    bottom: 16px;
-    position: relative;
-    line-height: 10px;
+    display: inline;
+
+}
+
+.top-item {
+    margin: 0 6px;
     display: inline-block;
 }
 
@@ -103,80 +147,108 @@ form button[type="submit"] {
     list-style-type: none;
 }
 
-.top-item {
-    color: black;
+.title{
+    color: #404040;
     font-size:12px;
-    font-family: Arial serif;
-    text-decoration: none;
-    padding-left: 5px;
-    display: inline-block;
+    padding-left: 10px;
 }
 
-.top-items ul li:nth-child(2) {
-    border-left: 1px solid grey;
-    border-right: 1px solid grey;
+.go::after {
+    content: "";
+    width: 1px;
+    height: 15px;
+    right: -8px;
+    bottom: -2px;
+    background: #e5e5e5;
+    position: relative;
+    display: inline-block;
+
 }
 
 .top-item a {
     text-decoration: none;
 }
 
-.top-item a .top-pic {
+.top-item  .top-pic {
+    margint:0 5px;
     display: inline-block;
 }
 
-.top-item a .title {
-    margin: 0 5px;
-    display: inline-block;
+.top-item .title {
+    margin: 0 3px;
     position: relative;
-    bottom: 8px;
+    display: inline-block;
+    bottom: 10px;
 
 }
+
+.title a {
+    color: #404040;
+}
+
+.title a:hover {
+    color: #E83828;
+}
+
+
 
 .nav-box {
-    background-color: #3a768f;
     width: 1180px;
     height: 45px;
-    border-top: 1px white solid;
-    border-bottom: 1px white solid;
+    border-top: 1px #e5e5e5 solid;
+    border-bottom: 1px #e5e5e5 solid;
     padding: 14px 0;
-    display: inline;
+    margin: 0 auto;
     font-size: 14px;
+
 }
 
-nav ul {
+.nn-box {
+    width: 146px;
+    height: 42px;
+    padding-left: 26px;
+    margin-left: 2px;
+    float: left;
+    display: inline-block;
+    border-left: 1px solid #efefef;
+}
+
+.nn-box:nth-child(1) {
+    padding-left: 0;
+    border: 0;
+}
+
+.nn-box:nth-child(7) {
+    text-align: right;
+    padding-left: 6px;
+    margin: 0;
+    float: right;
+
+}
+
+.nn-box ul {
+    height: 28px;
     list-style-type: none;
+
 }
 
-.column , .last-column{
-    width: 145px;
-    margin-top: 4px;
-    margin-bottom: 6px;
+.nn-box .nav-item {
+    width: 45px;
     display: inline-block;
 }
 
-.column:nth-child(-n+6) {
-    border-right: 1px solid grey;
-    margin-right: 22px;
+.nn-box .end .nav-item  {
+    width: 30px;
 }
 
-.last-column {
-
-    float: right;
+.nav-item a {
+    color: #333333;
 }
 
-td:nth-child(1) {
-    font-weight: bold;
+.nav-item a:hover {
+    color: #E83828;
 }
 
-table tr td a {
-    color: black;
-    text-decoration: none;
-}
-
-table tr td a:hover {
-    color: red;
-}
 
 main {
     width: 1200px;
@@ -239,6 +311,28 @@ main {
     order: 1;
 
 }
+
+.hot-left a {
+    color: black;
+    text-decoration: none;
+}
+
+.left-one {
+    width: 320px;
+    height: 220px;
+    margin: 0;
+    background-image: url(sohu-pics/hot_topic_left_one.jpg);
+    background-repeat: no-repeat;
+}
+
+.left-one p {
+    color: white;
+    font-size: 16px;
+    font-family: Arial serif;
+    position: relative;
+    top: 180px;
+}
+
 
 .hot-right {
     width: 300px;
@@ -368,7 +462,9 @@ main {
     background-color: #ffe4b2;
 }
 
-.list p {
+/* 全网页的带黄标的小标题 */
+.little-title {
+
     margin-bottom: 10px;
 }
 
