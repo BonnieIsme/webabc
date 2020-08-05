@@ -169,8 +169,6 @@ td:nth-child(1) {
     font-weight: bold;
 }
 
-
-
 table tr td a {
     color: black;
     text-decoration: none;
@@ -370,16 +368,44 @@ main {
     background-color: #ffe4b2;
 }
 
-.list a img {
-    width: 270px;
-    height: 135px;
-    position:  center;
+.list p {
+    margin-bottom: 10px;
 }
 
-.slip-ad {
-    width:300px ;
-    height: 300px;
-    border: 1px solid grey;
+.ranks {
+    width: 260px;
+    display: inline;
+}
+
+.ranks ul {
+    list-style-type: none;
+}
+
+.ranks ul li {
+    width: 70px;
+    text-align: center;
+    display: inline-block;
+}
+
+.ad-second {
+    width: 300px;
+    height: 260px;
+    background-color: white;
+}
+
+.ad-second figure a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+.list a {
+    text-decoration: none;
+    color: black;
+}
+
+.list ul {
+    list-style-type: none;
 }
 
 .hobby {
@@ -391,25 +417,37 @@ main {
 .hobby-items {
     width: 300px;
     height: 105px;
+    margin-top: 10px;
     border: 1px grey solid;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.hobby-items .little-contain {
+.hobby-items .little-contain-one {
     flex: 140px;
     height: 105px;
     border: 1px grey solid;
-    background-image: url(../test1/images/carrot.jpg);
+    background-image: url(sohu-pics/pcb.png);
     background-size: cover;
     position: center;
 }
 
-.hobby .little-contain p {
+.hobby-items .little-contain-two {
+    flex: 140px;
+    height: 105px;
+    border: 1px grey solid;
+    background-image: url(sohu-pics/sensor.png);
+    background-size: cover;
+    position: center;
+}
+
+.hobby .hobby-items p {
     background-color:rgba(0, 0, 0, .5) ;
     color: white;
-    position: center;
+    text-align: center;
+    position: relative;
+    top: 80px;
 }
 
 .bottom {
