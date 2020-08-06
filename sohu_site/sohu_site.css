@@ -15,14 +15,17 @@ header {
     background-color: #222222;
     height: 30px;
     color: #ffffff;
-    min-width: 1200px;
+    min-width: 1200px; /* min-width设置好，否则可能会有一段空白 */
 
+}
+
+ul {
+    list-style-type: none;
 }
 
 .header-top {
     width: 1180px;
     margin: 0 auto;
-    font-size: 14px;
     line-height: 30px;
     position: relative;
 }
@@ -35,16 +38,11 @@ header .header-box ul {
     list-style-type: none;
 }
 
-.set {
-    color: #a7a7a7;
-}
-
 .header-box ul li {
     float: left;
     display: inline;
     padding-left: 12px;
     font-size: 14px;
-    font-family: "PingFang SC",Arial,"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53",simsun,sans-serif;
 }
 
 .login::before {
@@ -61,7 +59,6 @@ header .header-box ul {
 }
 
 header .header-box ul li a {
-    text-decoration: none;
     color: #a7a7a7;
 }
 
@@ -75,7 +72,7 @@ header .header-box ul li a:hover {
  }
 
 .top-sohu {
-    position: absolute;
+    position: absolute; /* absolute 相对于position值不为static的父元素 */
     top: -30px;
     left: 0;
 }
@@ -113,7 +110,7 @@ header .header-box ul li a:hover {
     border-color: #FDD000;
 }
 
-form button[type="submit"] {
+#searchButton {
     width: 80px;
     height: 40px;
     background-color: #FDD000;
@@ -144,10 +141,6 @@ form button[type="submit"] {
     display: inline-block;
 }
 
-.top-items ul {
-    list-style-type: none;
-}
-
 .title{
     color: #404040;
     font-size:12px;
@@ -164,10 +157,6 @@ form button[type="submit"] {
     position: relative;
     display: inline-block;
 
-}
-
-.top-item a {
-    text-decoration: none;
 }
 
 .top-item  .top-pic {
@@ -190,8 +179,6 @@ form button[type="submit"] {
 .title a:hover {
     color: #E83828;
 }
-
-
 
 .nav-box {
     width: 1180px;
@@ -229,8 +216,6 @@ form button[type="submit"] {
 
 .nn-box ul {
     height: 28px;
-    list-style-type: none;
-
 }
 
 .nn-box .nav-item {
@@ -293,8 +278,6 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-
 }
 
 .hot-middle {
@@ -308,14 +291,8 @@ main {
 .hot-left {
     width: 320px;
     height: 1142px;
-    background-color: orangered;
     order: 1;
 
-}
-
-.hot-left a {
-    color: black;
-    text-decoration: none;
 }
 
 .left-one {
@@ -329,11 +306,187 @@ main {
 .left-one p {
     color: white;
     font-size: 16px;
-    font-family: Arial serif;
     position: relative;
     top: 180px;
 }
 
+.left-two {
+    margin-top: 10px;
+}
+
+.left-two figure {
+    height: 170px;
+
+}
+
+.left-two figure:nth-child(odd) {
+    float: left;
+    margin-right: 10px;
+}
+
+.left-two figure:nth-child(even) {
+    overflow: hidden;
+}
+
+.left-two figure img {
+    width: 155px;
+    height: 103px;
+}
+
+.left-two figure figcaption {
+    width: 155px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 20px;
+    margin-top: 11px;
+}
+
+.left-two a {
+    color: #404040;
+}
+
+.left-two a:hover {
+    color: #E83828;
+}
+
+.left-three {
+    width: 320px;
+    height: 556px;
+
+}
+
+.all-title {
+    width: 320px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.tt {
+    float: left;
+    width: 44px;
+    height: 24px;
+    font-size: 16px;
+    color: #666666;
+}
+
+.tt::before {
+    float: left;
+    content: "";
+    width: 4px;
+    height: 14px;
+    background-color:#FDD000;
+    margin: 5px 8px 0 0;
+    display: inline-block;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.pic-news {
+    width: 320px;
+    height: 160px;
+    margin: 8px auto 0;
+    background-image: url(sohu-pics/left_three_1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+}
+
+.player {
+    height: 26px;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    display: inline-block;
+}
+
+.content {
+    width: 320px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.content-text {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.two-pic-news {
+    width: 320px;
+    height: 103px;
+    margin-top: 23px;
+    position: relative;
+}
+
+.pic {
+    width: 155px;
+    height: 103px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pic.pic-one {
+    background-image: url(sohu-pics/left_three_2jpg.jpg);
+    float: left;
+    margin-right: 10px;
+}
+
+.pic.pic-two {
+    background-image: url(sohu-pics/left_three_3.jpg);
+    float: left;
+}
+
+.pic-content {
+    width: 155px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.three-list {
+    width: 320px;
+    height: 84px;
+    padding-top: 7px;
+}
+
+.three-list-second {
+    height: 140px;
+}
+
+.three-list ul {
+    width: 320px;
+    height: 28px;
+    line-height: 28px;
+}
+
+.three-list ul li {
+
+    margin-right:6px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.three-list ul li:nth-child(1) {
+    margin: 0;
+}
+
+.three-list ul li a {
+    color: #404040;
+}
+
+.three-list ul li a:hover {
+    color: #E83828;
+}
+
+.three-list li:nth-child(2) {
+    color: #cccccc;
+    margin: 0 3px;
+}
 
 .hot-right {
     width: 300px;
