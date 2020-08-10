@@ -44,6 +44,7 @@ header .header-box ul {
     font-size: 14px;
 }
 
+
 .login::before {
     float: left;
     content: "";
@@ -79,7 +80,6 @@ header .header-box ul li a:hover {
 .form-search {
     position: relative;
     height: 90px;
-
 }
 
 .form-search form fieldset {
@@ -119,7 +119,6 @@ header .header-box ul li a:hover {
     border:none;
     display: inline-block;
     float: right;
-
 }
 
 .top-right {
@@ -563,6 +562,9 @@ main {
 }
 
 .change {
+    width: 68px;
+    height: 22px;
+    line-height: 22px;
     float: right;
     font-size: 12px;
     position: relative;
@@ -571,6 +573,8 @@ main {
 
 .change a {
     color: #539ff3;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
 }
 
 .change a img {
@@ -578,8 +582,7 @@ main {
 }
 
 .change a:hover {
-    border: 2px solid #539ff3;
-    border-radius: 5px;
+    border-color: #539ff3;
 }
 
 .right-one-pic {
