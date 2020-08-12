@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有用的数组方法</title>
+</head>
+<body>
+    <div class="output-products">
+        <ul>
+            <li>test</li>
+            <li>test</li>
+        </ul>
+        <p>test paragraph</p>
+    </div>
+
+    <div class="output-search">
+        <input type="search" id="search">
+        <button type="submit">Search</button>
+        <ul>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+        </ul>
+    </div>
+
+<script type="text/javascript" defer>
+    let proList = document.querySelector('.output-products ul');
+    let proPar = document.querySelector('.output-products p');
+    let total = 0;
+    proList.innerHTML = ' ';
+    proPar.textContent  = ' ';
+
+    let products = ['Underpants:6.99',
+                     'Socks:5.99',
+                      'T-shirt:14.99',
+                      'Trousers:31.99',
+                       'Shoes:23.99'];
+
+    for (let i = 0;i < products.length; i++) {
+        let pro = products[i].split(':');
+        let a = pro[0];
+        let b =pro[1];
+        let proItem = document.createElement("li");
+        proItem.textContent = a + '—$' + b;
+        proList.appendChild(proItem);
+        total += Number(b);
+    }
+
+    proPar.textContent = 'Total:$' + total.toFixed(2);
+
+    // 前5个搜索
+    let search = document.querySelector('.output-search input');
+    let subBtn = document.querySelector('.output-search button');
+    let historyList = document.querySelector('.output-search ul');
+    historyList.innerHTML = ' ';
+
+    let history = [];
+
+    subBtn.onclick = function () {
+
+        // 首先检查输入是否为空
+        if (search.textContent !== ' ') {
+            let newItem = search.value;
+
+            history.unshift(newItem);
+
+
+            // 若不清空之前的显示列表，那在下一次显示时，上一次的列表也会显示
+            // 像historyList的历史记录一样
+            historyList.innerHTML = ' ';
+            for (let j = 0;j < history.length; j++) {
+                let listItem = document.createElement("li");
+                listItem.textContent = history[j];
+                historyList.appendChild(listItem);
+            }
+
+            if (history.length >= 5) {
+                history.pop();
+            }
+
+            search.value = ' ';
+            search.focus();
+        }
+
+
+    }
+</script>
+</body>
+</html>

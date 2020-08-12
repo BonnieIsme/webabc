@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有用的字符串方法</title>
+</head>
+<body>
+    <div class="output-greet">
+        <ul>
+            <li>It is a test</li>
+            <li>It is a test</li>
+            <li>It is a test</li>
+        </ul>
+    </div>
+
+    <div class="output-city">
+        <ul>
+            <li>it is a test</li>
+            <li>it is a test</li>
+        </ul>
+    </div>
+
+    <div class="output-station">
+        <ul>
+            <li>just for testing</li>
+            <li>just for testing</li>
+        </ul>
+    </div>
+<script type="text/javascript" defer>
+
+    let list = document.querySelector('.output-greet  ul');
+
+    // 清空原来ul中的内容
+    list.innerHTML = ' ';
+
+    let greetings = ['Happy Birthday!',
+        'Merry Christmas my love',
+        'A happy Christmas to all the family',
+        'You\'re all I want for Christmas',
+        'Get well soon'];
+
+    for (let i = 0; i < greetings.length; i++) {
+        let input = greetings[i];
+        if (input.indexOf('Christmas') !== -1) {
+            let getIt = input;
+            let li = document.createElement('li');
+            li.textContent = getIt;
+            list.appendChild(li);
+        }
+    }
+
+    let cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
+    let cityNameList = document.querySelector('.output-city ul');
+    cityNameList.textContent = ' ';
+
+    for (let j = 0;j < cities.length; j++) {
+        let city = cities[j];
+        let lower =  city.toLowerCase();
+        let upper = lower.slice(0,1).toUpperCase();
+        let result = upper + lower.slice(1);
+
+        let cityItem = document.createElement("li");
+        cityItem.textContent = result;
+        cityNameList.appendChild(cityItem);
+    }
+
+    let stationList = document.querySelector('.output-station ul');
+    stationList.textContent = ' ';
+
+    let stations = ['MAN675847583748sjt567654;Manchester Piccadilly',
+        'GNF576746573fhdg4737dh4;Greenfield',
+        'LIV5hg65hd737456236dch46dg4;Liverpool Lime Street',
+        'SYB4f65hf75f736463;Stalybridge',
+        'HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield'];
+
+    for (let k = 0;k < stations.length; k++) {
+        let input = stations[k];
+        let one = input.slice(0,3);
+        let address = input.indexOf(';');
+        let two = input.slice(address + 1);
+        let outputSta = one + ':' + two;
+        let station = document.createElement("li");
+        station.textContent = outputSta;
+        stationList.appendChild(station);
+    }
+
+</script>
+</body>
+</html>
