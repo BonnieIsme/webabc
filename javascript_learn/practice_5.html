@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Random color example — event handler property</title>
+    <style>
+        button {
+            margin: 10px;
+            width: 220px;
+            height: 30px;
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 10px 10px;
+            float: left;
+            text-align: center;
+            line-height: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <button>Change color</button>
+
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+
+<script>
+
+    let divs = document.querySelectorAll("div");
+
+   for (let i = 0; i < divs.length; i++) {
+       divs[i].onclick =function (e) {
+            e.target.style.backgroundColor = bgChange(e);
+       }
+   }
+
+
+    const btn = document.querySelector('button');
+
+    function random(number) {
+        return Math.floor(Math.random()*number);
+    }
+
+    function bgChange(e) {
+        const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+        e.target.style.backgroundColor = rndCol;
+    }
+
+    btn.addEventListener('click',bgChange);
+</script>
+</body>
+</html>

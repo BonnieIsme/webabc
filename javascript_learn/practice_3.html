@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单的日历</title>
+</head>
+<style>
+    .calendar {
+        width: 200px;
+        height: 30px;
+        margin: 0 auto 10px;
+        text-align: center;
+        line-height: 30px;
+        background-color: #ffee3b;
+        border: 2px solid #ffe4b2;
+        border-radius: 2px;
+    }
+
+    .new-calendar {
+        margin: 0 auto;
+        width: 1000px;
+        height: 300px;
+        padding: 5px 5px;
+        border: rgb(87,195,194) 20px solid;
+        border-radius: 20px;
+    }
+
+    div ul {
+        list-style-type: none;
+    }
+
+    div ul li {
+        float: left;
+        margin: 10px 10px;
+        width: 100px;
+        height: 30px;
+        background-color: rgb(18,170,156);
+        text-align: center;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        font-family: cursive;
+    }
+</style>
+<body>
+    <div class="calendar">
+        <label for="calendar">2020年日历</label>
+        <select id="calendar">
+            <option value="1">Jan</option>
+            <option value="2">Feb</option>
+            <option value="3">Mar</option>
+            <option value="4">Apr</option>
+            <option value="5">May</option>
+            <option value="6">Jun</option>
+            <option value="7">Jul</option>
+            <option value="8">Aug</option>
+            <option value="9">Sep</option>
+            <option value="10">Oct</option>
+            <option value="11">Nov</option>
+            <option value="12">Dec</option>
+        </select>
+    </div>
+        <div class="new-calendar">
+
+        </div>
+
+<script type="text/javascript">
+    let selectCal = document.querySelector('#calendar');
+    let newCalendar = document.querySelector('.new-calendar');
+    
+    function createCalendar(days) {
+        let calendar = document.createElement('ul');
+
+        for (let i = 0; i < days; i++) {
+            let calItem  = document.createElement('li');
+            calItem.textContent = (i+1).toString() ;
+            calendar.appendChild(calItem);
+        }
+
+        newCalendar.appendChild(calendar);
+    }
+
+    selectCal.addEventListener('change',work);
+
+    function work() {
+        let choice = selectCal.value;
+        let days;
+
+        if (choice === '1' || choice === '3' || choice === '5' || choice === '7' || choice === '8' || choice === '10'
+            || choice === '12') {
+            days = 31;
+
+            newCalendar.innerHTML = ' ';
+            createCalendar(days);
+
+        } else if (choice === '2') {
+            days = 28;
+            newCalendar.innerHTML = ' ';
+            createCalendar(days);
+
+        } else {
+            days = 30;
+            newCalendar.innerHTML = ' ';
+            createCalendar(days);
+        }
+    }
+</script>
+</body>
+</html>

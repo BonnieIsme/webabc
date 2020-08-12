@@ -1,41 +1,49 @@
-    let node = document.getElementById('timer');
-    console.log(node);
-
-    // console.dir 打印我们返回的元素对象，更好地查看里面的属性和方法
-    console.dir(node);
-
-    let timerText ;
-    timerText = document.createElement("p");
-    timerText.textContent = node.innerText;
-    node.appendChild(timerText);
-
-
-    // 输出元素节点的文本内容
-
-    // 更新元素节点的文本内容
-    //node.innerHTML = ' refresh content';
+    // switch的初步练习
+    let select = document.querySelector('select');
+    let para  = document.querySelector('p');
+    let str = 'good luck';
 
 
 
 
+    select.addEventListener('change',setWeather);
 
-    /*
-    let txt = document.getElementById('txt');
-    txt.innerHTML = '好好学习，天天向上！';
+    function setWeather() {
+        let choice = select.value;
+        switch (choice) {
+            case 'sunny':
+                para.textContent = '晴天，祝你好运！';
+                break;
 
-    let testString = 'SeanIshim';
+            case 'rainy':
+                para.textContent = '下雨天，记得带伞！';
+                break;
 
-    let myData = 'Manchester,London,Liverpool,Birmingham,Leeds,Carlisle';
+            case 'snowing':
+                para.textContent = '下雪去堆雪人吧！';
+                break;
 
-    // 用，号分隔myData, 字符串成了数组
-    let myArray = myData.split(',');
+            default:
+                para.textContent = ' ';
+        }
+    }
 
-    // 数组又成了字符串 方法一
-    let myNewString = myArray.join(',');
+    console.log(select);
+    console.log(para);
+    console.dir(select);
+    console.dir(para);
+    alert(select.getAttributeNode('id').nodeValue);
 
-    // 数组成字符串 方法二
-    let newString = myArray.toString();
 
-     */
+    // switch与三元运算练习
+    let selectTheme = document.querySelector('#theme');
 
+    function update(bgColor,txtColor) {
+        document.querySelector("html").style.backgroundColor = bgColor;
+        document.querySelector('html').style.color = txtColor;
+    }
+
+    selectTheme.onchange = function () {
+        ( selectTheme.value === 'black' ) ? update('black','wheat') : update('white','grey');
+    }
 

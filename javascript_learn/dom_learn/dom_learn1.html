@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM的基础学习</title>
-    <script src="dom_learn1.js" async></script>
+    <script src="dom_learn1.js" defer></script>
 </head>
 <style type="text/css">
     #changeText {
@@ -12,10 +12,27 @@
     }
 </style>
 <body>
+    <div class="for-switch">
+        <label for="weather">选择天气：</label>
+        <select id="weather">
+            <option value=" ">请选择</option>
+            <option value="sunny">Sunny</option>
+            <option value="rainy">Rainy</option>
+            <option value="snowing">Snowing</option>
+        </select>
+        <p></p>
+    </div>
 
-    <div id="timer">2020-09-09</div>
+    <div class="for-three">
+        <label for="theme">选择主题：</label>
+        <select id="theme">
+            <option value="white">White</option>
+            <option value="black">Black</option>
+        </select>
+        <h1>这就是俺的网页！</h1>
+    </div>
 
 
-
+    <script src="dom_learn1.js" ></script>
 </body>
 </html>
