@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object-oriented JavaScript test</title>
+</head>
+<body>
+    <p>对象学习</p>
+<script type="text/javascript">
+    let address = {
+        first : 'Beijing',
+        second : 'Chongqing'
+    }
+
+    let person = {
+        name : ['Sean', 'Roy'],
+        age : 29,
+        gender : 'male',
+        interest : ['music','dance'],
+        address,
+        mine : function () {
+            alert(this.name[0] + ' is ' + this.age + '. He likes ' + this.interest[0]);
+        },
+        hello: function () {
+            alert('Hi, my bro! My name is' +　this.name[1] + ' .');
+        }
+    };
+
+    // 创建Person()构造函数
+    function Person(first,last,age) {
+        this.name = {
+            first : first,
+            last : last
+        };
+
+        this.age = age;
+        this.bio = function () {
+            alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old.');
+        };
+        this.greeting = function () {
+            alert('Hi, my bro! My name is ' +　this.name.first + ' .');
+        };
+    }
+
+    let Person1 = new Person('Sean','Smith',29,'male','music');
+
+
+    // Object()构造函数
+    let person1 = new Object();
+    person1.name = 'Sean';
+    person1.age = 28;
+    person1.greeting = function () {
+        alert('Hi, my bro! My name is ' +　this.name + ' .');
+    }
+
+    // 或者将对象文本传递给Object()构造函数作为参数，以便属性和方法填充
+    let person2 = new Object({
+        name : 'Sean',
+        age : 28,
+        bio : function () {
+            alert('Hi! I\'m ' + this.name + '.');
+        }
+    });
+
+    // create(),它允许基于现有对象创建新的对象,就像是继承一样
+    // 不考虑对旧浏览器的支持，并且只需要一个对象的一些副本，可以用
+    let person3 = Object.create(person2);
+
+
+    // 修改构造器的prototype属性
+    // 一种极其常见的对象定义模式是，在构造器（函数体）中定义属性、在 prototype 属性上定义方法。
+    // 这是在构造器的prototype属性中建造一个函数
+    Person.prototype.farewell =function () {
+        alert(this.name.first + ' have a good day!');
+
+    }
+
+    /* 这是在构造器的prototype属性中添加一个属性，但是由于这样不灵活，所以少见，但是还是见见
+       这适合定义常属性，但是一般来说，还是在构造器里定义较好
+       还有注意的，在这里的this是无效的，这里的this定的是全局范围，无效。
+       之前在函数范围内，this才能够成功转换为对象实例范围。*/
+
+    // Person.prototype.fullName = this.name.first ;  this是无效的。
+    Person.prototype.fullName = 'Sean Green';
+
+
+</script>
+</body>
+</html>

@@ -19,7 +19,7 @@
     .new-calendar {
         margin: 0 auto;
         width: 1000px;
-        height: 300px;
+        height: 350px;
         padding: 5px 5px;
         border: rgb(87,195,194) 20px solid;
         border-radius: 20px;
@@ -34,6 +34,7 @@
         margin: 10px 10px;
         width: 100px;
         height: 30px;
+        line-height: 30px;
         background-color: rgb(18,170,156);
         text-align: center;
         border: 1px solid transparent;
@@ -59,8 +60,19 @@
             <option value="12">Dec</option>
         </select>
     </div>
-        <div class="new-calendar">
 
+        <div class="new-calendar">
+            <div>
+                <ul>
+                    <li>周日</li>
+                    <li>周一</li>
+                    <li>周二</li>
+                    <li>周三</li>
+                    <li>周四</li>
+                    <li>周五</li>
+                    <li>周六</li>
+                </ul>
+            </div>
         </div>
 
 <script type="text/javascript">
@@ -70,10 +82,41 @@
     function createCalendar(days) {
         let calendar = document.createElement('ul');
 
-        for (let i = 0; i < days; i++) {
-            let calItem  = document.createElement('li');
-            calItem.textContent = (i+1).toString() ;
-            calendar.appendChild(calItem);
+        for (let i = 0; i < days + 7; i++) {
+            if (i === 0) {
+                let calItem  = document.createElement('li');
+                calItem.textContent = '周日' ;
+                calendar.appendChild(calItem);
+            } else if (i === 1) {
+                let calItem  = document.createElement('li');
+                calItem.textContent = '周一' ;
+                calendar.appendChild(calItem);
+            }  else if (i === 2) {
+                let calItem  = document.createElement('li');
+                calItem.textContent = '周二' ;
+                calendar.appendChild(calItem);
+            } else if (i === 3) {
+                let calItem  = document.createElement('li');
+                calItem.textContent = '周三' ;
+                calendar.appendChild(calItem);
+            } else if (i === 4) {
+                let calItem  = document.createElement('li');
+                calItem.textContent = '周四' ;
+                calendar.appendChild(calItem);
+            } else if (i === 5) {
+                let calItem  = document.createElement('li');
+                calItem.textContent = '周五' ;
+                calendar.appendChild(calItem);
+            } else if (i === 6) {
+                let calItem  = document.createElement('li');
+                calItem.textContent = '周六' ;
+                calendar.appendChild(calItem);
+            } else {
+                let calItem  = document.createElement('li');
+                calItem.textContent = (i-6).toString() ;
+                calendar.appendChild(calItem);
+            }
+
         }
 
         newCalendar.appendChild(calendar);
