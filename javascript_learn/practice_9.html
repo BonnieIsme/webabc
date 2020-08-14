@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        let para = document.querySelector("p");
+        function print() {
+            para.textContent = 'hello';
+        }
+
+        setTimeout(print,3000);
+
+        new Promise(function (resolve,reject) {
+            setTimeout(function () {
+                console.log('First');
+                resolve();
+            },1000);
+        }).then(function () {
+            return new Promise(function (resolve,reject) {
+                setTimeout(function () {
+                    console.log('Second');
+                    resolve();
+                },4000);
+            }).then(function () {
+                return new Promise(function (resolve,reject) {
+                    setTimeout(function () {
+                        console.log('Third');
+                        resolve();
+                    },3000);
+                })
+            })
+        });
+
+        new Promise(function (resolve,reject) {
+            let a = 0;
+            let b = 1;
+            if (b === 0) {
+                reject("No zero");
+            } else {
+                resolve(a / b);
+            }
+        }).then(function (value) {
+            console.log('a / b = ' + value);
+        }).catch(function (err) {
+            console.log(err);
+        }).finally(function () {
+            console.log('end');
+        })
+
+        new Promise(function (resolve,reject) {
+            console.log(1111);
+            resolve(2222);
+        }).then(function (value) {
+            console.log(value);
+            return 3333;
+        }).then(function (value) {
+            console.log(value);
+            return 4444;
+        }).then(function (value) {
+            console.log(value);
+            throw  "An error";
+        }).catch(function (err) {
+            console.log(err);
+        })
+
+        // Promise 函数
+        function printIt(delay,message) {
+            return new Promise(function (resolve,reject) {
+                setTimeout(function () {
+                    console.log(message);
+                },delay);
+            })
+        }
+
+        printIt(1000,'one').then(function () {
+            return printIt(4000,'two');
+        }).then(function () {
+            printIt(3000,'third');
+        })
+
+        // 异步函数
+        async function asyncFunc() {
+            await printIt(1000,'hello');
+            await printIt(5000,'my');
+            await printIt(7000,'world');
+        }
+
+        async function asyncFunction() {
+            try {
+                await new Promise(function (resolve,reject) {
+                    throw 'an error!';
+                })
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        asyncFunc();
+        asyncFunction();
+    </script>
+</body>
+</html>

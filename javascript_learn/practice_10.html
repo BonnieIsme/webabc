@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三个函数</title>
+</head>
+<body>
+
+    <div id="my-box" style="color: blue;font: 20px cursive;">test Interval</div>
+    <p>Live example</p>
+    <button id="show">Show an alert box after 2 seconds</button>
+    <button id="cancel">Cancel alert before it happens</button>
+
+<script>
+
+    // setTimeout(); and clearTimeout();
+    let show = document.getElementById('show');
+    let cancel = document.getElementById('cancel');
+
+    let timeoutID;
+
+    function delayAlert() {
+        timeoutID = window.setTimeout(window.alert, 2 * 1000, 'I am alert box');
+    }
+
+    function cancelBox() {
+        window.clearTimeout(timeoutID);
+    }
+
+    show.addEventListener('click',delayAlert);
+    cancel.addEventListener('click',cancelBox);
+
+    // setInterval()
+    let intervalID = window.setInterval(myCallback,500,'Param1','Param2');
+
+    function myCallback(a,b) {
+        console.log(a);
+        console.log(b);
+    }
+
+    let nIntervalId;
+
+    function changeColor() {
+        nIntervalId = setInterval(flashText,2000);
+    }
+
+    function flashText() {
+        let oElem = document.getElementById('my-box');
+        oElem.style.color = oElem.style.color == 'pink' ? 'orange' : 'pink';
+    }
+
+    function stopTextColor() {
+        clearInterval(nIntervalId);
+    }
+</script>
+</body>
+</html>
