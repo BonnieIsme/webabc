@@ -10,6 +10,7 @@
     <p>Live example</p>
     <button id="show">Show an alert box after 2 seconds</button>
     <button id="cancel">Cancel alert before it happens</button>
+    <button id="clear">clear the interval</button>
 
 <script>
 
@@ -30,7 +31,8 @@
     show.addEventListener('click',delayAlert);
     cancel.addEventListener('click',cancelBox);
 
-    // setInterval()
+
+    // setInterval() and clearInterval();
     let intervalID = window.setInterval(myCallback,500,'Param1','Param2');
 
     function myCallback(a,b) {
@@ -39,6 +41,7 @@
     }
 
     let nIntervalId;
+    let clear = document.getElementById('clear');
 
     function changeColor() {
         nIntervalId = setInterval(flashText,2000);
@@ -51,6 +54,10 @@
 
     function stopTextColor() {
         clearInterval(nIntervalId);
+    }
+
+    clear.onclick = function () {
+        stopTextColor();
     }
 </script>
 </body>

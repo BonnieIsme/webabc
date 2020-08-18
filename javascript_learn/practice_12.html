@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>requestAnimationFrame</title>
+</head>
+<body>
+    <div id="mover" style="width: 20px;height: 20px;background-color: #FF359A"></div>
+
+<script>
+    const element = document.getElementById('mover');
+
+    let start;
+
+    function step(timeStamp) {
+        if (start === undefined) {
+            start = timeStamp;
+        }
+
+        const elapsed = timeStamp - start;
+        element.style.transform = 'translateX(' +　Math.min(0.1 * elapsed,200) + 'px';
+
+        if (elapsed < 2000) {
+            window.requestAnimationFrame(step);
+        }
+    }
+
+    window.requestAnimationFrame(step);
+
+</script>
+</body>
+</html>

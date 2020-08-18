@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+
+
+<script>
+    let elements = [
+        'one',
+        'two',
+        'three'
+    ]
+
+    elements.map(function (element) {
+        return element.length;
+    });
+
+    elements.map(element => element.length);
+
+    function Person() {
+        /* let that = this;
+         that.age = 0;
+
+      /* setInterval(function growUp() {
+             that.age++;
+         },1000);*/
+
+        this.age=0;
+
+        setInterval(() => {
+            this.age++; // |this|正确地指向p实例
+        },1000);
+    }
+
+    let p = new Person();
+
+    function sortArguments() {
+        let args = Array.prototype.slice.call(arguments); // 将类数组arguments转换为数组
+        let sortedArgs = args.sort();
+        return sortedArgs;
+    }
+
+    console.log(sortArguments(5,3,7,1)); // shows 1,3,5,7
+
+    // 剩余参数，允许将一个不定数量的参数表示为一个数组，剩余参数是相较arguments对象更好的选择
+    function sum(...theArgs) {
+        return theArgs.reduce((previous,current) => {
+            return previous +　current;
+        });
+    }
+
+    function foo(arg) {
+        let f = (...args) => args[0];
+        return f(arg);
+    }
+
+    function foos(arg1,arg2) {
+        let f1 = (...args) => args[1];
+        return f1(arg1,arg2);
+    }
+
+    function multiply(multiplier,...theArgs) {
+        return theArgs.map(function (element) {
+            return multiplier * element;
+        })
+    }
+
+    function f(...[a,b,c]) { // 固定参数数量
+        return a + b + c;
+    }
+
+    let a = {
+        name : "Cherry",
+        f1 :　function () {
+            console.log(this.name);
+        },
+
+        f2 : function () {
+            let arrow  = () => {
+              this.f1();
+            };
+
+            setTimeout(arrow,1000);
+
+
+          /*  setTimeout(() => {
+                this.f1();  // 这里的this是指的f2的对象 a
+
+            },1000);*/
+        }
+    };
+
+
+
+</script>
+</body>
+</html>
