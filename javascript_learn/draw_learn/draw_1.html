@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>开始使用canvas</title>
 </head>
+<style>
+    canvas {
+        background-color: #ffe4b2;
+
+    }
+
+
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+</style>
 <body>
-$END$
+    <!-- 形成画布 -->
+    <canvas class="one">
+        <!-- 如果不能正常显示画布，就会显示这个 -->
+        <p>Gosh！你的浏览器不支持canvas</p>
+    </canvas>
+
+
+
+<script type="text/javascript">
+    let canvas = document.querySelector("canvas");
+    let ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    // 矩形
+    ctx.fillStyle = 'rgba(255,0,0,.8)';
+    ctx.fillRect(50,50,100,150);
+
+    ctx.fillStyle = 'rgba(0,255,0,.5)';
+    ctx.fillRect(60,50,100,150);
+
+
+
+
+    // 描边（stroke）和线条宽度
+    ctx.strokeStyle = 'rgba(169,144,166,.5)';
+    ctx.lineWidth = 5;
+    ctx.strokeRect(10,10,30,30);
+
+
+</script>
 </body>
 </html>

@@ -2,9 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>画图</title>
 </head>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+</style>
 <body>
-$END$
+    <canvas></canvas>
+<script>
+    let canvas = document.querySelector("canvas");
+    let ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    ctx.fillStyle = 'rgba(119,211,181,.5)';
+    ctx.beginPath();
+    ctx.moveTo(50,50);
+    ctx.lineTo(150,50);
+
+    let triHeight = 50 * Math.tan(degToRad(60));
+
+    ctx.lineTo(100,50 + triHeight);
+    ctx.lineTo(50,50);
+    ctx.fill();
+
+    // 等边三角形
+    function degToRad(degrees) {
+        return degrees * Math.PI / 180;
+    }
+
+    // 画圆
+    ctx.fillStyle = 'rgba(112,151,213,.6)';
+    ctx.beginPath();
+    ctx.arc(250,100,50,0,2 * Math.PI);
+    ctx.fill();
+
+    //画弧
+    ctx.fillStyle = 'rgba(212,118,121,.6)';
+    ctx.beginPath();
+    ctx.arc(360,100,50,degToRad(-45),degToRad(45));
+    ctx.fill();
+
+    // 画弧线
+    ctx.strokeStyle = 'rgba(161,191,182,.7)';
+    ctx.beginPath();
+    ctx.arc(100,200,50,degToRad(60),degToRad(90),true);
+    ctx.lineWidth = 10;
+    ctx.stroke();
+
+    // 吃豆人
+    ctx.fillStyle = 'rgb(220,220,0)';
+    ctx.beginPath();
+    ctx.moveTo(250,200);
+    ctx.arc(250,200,50,degToRad(-45),degToRad(45),true);
+    ctx.fill();
+
+    // 绘制文本
+    ctx.strokeStyle = 'rgba(211,112,110,.5)';
+    ctx.lineWidth = 1;
+    ctx.font = '48px cursive';
+    ctx.strokeText('Sean！',400,400);
+
+    ctx.fillStyle = 'rgba(112,134,212,.6)';
+    ctx.font = '36px cursive';
+    ctx.textAlign = 'start';
+    ctx.textBaseline ='bottom';
+    ctx.fillText('U are the best!',400,450);
+
+
+
+</script>
 </body>
 </html>

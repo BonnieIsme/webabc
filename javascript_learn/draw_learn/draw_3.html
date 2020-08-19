@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>在画布上绘制图片</title>
 </head>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+</style>
 <body>
-$END$
+    <canvas>
+
+    </canvas>
+<script>
+    let canvas = document.querySelector("canvas");
+    let ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    ctx.fillStyle = 'rgb(0,0,0)';
+    ctx.fillRect(0,0,width,height);
+
+    // 将图片嵌入画布中
+    let image = new Image();
+    image.src = '../images/firefox.png';
+
+    // 保证图片加载完之后再嵌入画布
+    image.onload = function () {
+        ctx.drawImage(image,50,50);
+    }
+
+    // 裁剪嵌入的图片
+    // ctx.drawImage(image,裁图x，裁图y，裁图宽，裁图高，示图x，示图y，示图宽，示图高)
+    let image1 = new Image();
+    image1.src = '../images/dinosaur.png';
+    image1.onload = () => {
+        ctx.drawImage(image1,120,0,100,90,420,50,70,50);
+    }
+</script>
 </body>
 </html>

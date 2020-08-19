@@ -2,9 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>循环</title>
 </head>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+</style>
 <body>
-$END$
+    <canvas>
+
+    </canvas>
+<script type="text/javascript">
+    let canvas = document.querySelector("canvas");
+    let ctx = canvas.getContext('2d');
+    let width = canvas.width =window.innerWidth;
+    let height =canvas.height = window.innerHeight;
+
+    ctx.fillStyle = 'rgb(0,0,0)';
+    ctx.fillRect(0,0,width,height);
+
+    // 让原点(0,0)移动到中心
+    ctx.translate(width / 2,height / 2);
+
+    // 把角度转换为弧度
+    function degreeToRad(degree) {
+        return degree * Math.PI / 180;
+    }
+
+    function randomNum(min,max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    let length = 250;
+    let moveOffset = 20;
+
+    for (let i = 0; i < length;i++) {
+        ctx.fillStyle = 'rgba(' + randomNum(0,255) + ','
+                        + randomNum(0,255) + ','
+                        + randomNum(0,255) + ')';
+
+        ctx.beginPath();
+        ctx.moveTo(moveOffset,moveOffset);
+        ctx.lineTo(moveOffset + length,moveOffset);
+        ctx.lineTo(moveOffset + length / 2,moveOffset + length * Math.tan(degreeToRad(60)));
+        ctx.lineTo(moveOffset,moveOffset);
+        ctx.fill();
+
+        length--;
+        moveOffset += 0.5;
+        ctx.rotate(degreeToRad(5));
+    }
+
+</script>
 </body>
 </html>
