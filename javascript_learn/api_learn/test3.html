@@ -1,59 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Google Maps example</title>
-    <style>
-        #map_canvas {
-            width: 600px;
-            height: 600px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--  进行移动端开发时，请在head内添加viewport设置，以达到最佳的绘制性能 -->
+    <!-- <meta name = 'viewport' content = 'initial-scale=1.0,user-scalable=no'> -->
+    <title>高德地图API-同步加载</title>
 </head>
-<body>
-<h1>Simple maps example</h1>
-
-<div id="map_canvas"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6bZxjUfjCGHdedVw_XX7Tt-XCHq6C_TY"></script>
-<script>
-    function initMap(listener) {
-        let myOptions = {
-            zoom: 8,
-            center: {lat: 53.480759, lng: -2.242631},
-            mapTypeId: google.maps.MapTypeId.TERRAIN,
-            disableDefaultUI: true,
-            // Step 4. Customize displayed controls
-            zoomControl: true,
-            mapTypeControl: true,
-            scaleControl: true
-        }
-        let map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-
-        // Step 2. Add custom icon
-
-        let iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-
-        let marker = new google.maps.Marker({
-            position: {lat: 53.480759, lng: -2.242631},
-            icon: iconBase + 'flag_maps.png',
-            map: map
-        });
-
-        // Step 3. Add info window
-
-        let contentString = '<div id="content"><h2 id="firstHeading" class="firstHeading">Custom info window</h2><p>This is a cool custom info window.</p></div>';
-
-        let infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-
-        marker.addListener('click', function () {
-            infowindow.open(map, marker);
-        });
+<style>
+    div{
+        width: 600px;
+        height: 400px;
+        float: left;
+        margin: 10px;
     }
 
-    initMap();
-</script>
+</style>
+<body>
+    <div id="container"></div>
+    <div id="container-one"></div>
+    <div id="container-two"></div>
+    <div id="container-third"></div>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=d5f81733ecc65234f0e24539d80d7e37"></script>
+<script>
+    // 创建一个地图
+    // 这是简单创建 let map = new AMap.Map('container');
+    // 创建同时给地图设置属性
+    let map = new AMap.Map('container',{
+        zoom:11, // 级别
+        center : [116.397428, 39.90923], // 中心点坐标
+        viewMode: '3D' ,// 使用3D视图
+        resizeEnable: true
+    });
 
+    // 图层 默认情况下，地图只显示标准底图，如需要叠加别的图层，可以通过map.add方法添加图层：
+    // 实时路况图层
+    let trafficLayer = new AMap.TileLayer.Traffic({
+        zIndex: 10
+    });
+
+    map.add(trafficLayer); // 添加图层到地图
+
+    // 可以在地图初始化时通过layers属性为地图添加多个图层
+    let map1 = new AMap.Map('container-one',{
+        center : [116.397428, 39.90923],
+        layers: [
+            // 使用多个图层
+            new AMap.TileLayer.Satellite(), // 卫星图层 实景
+            new AMap.TileLayer.RoadNet(),  // 路网图层 路网
+            new AMap.TileLayer.Traffic(), // 实时交通路况
+
+        ],
+
+        zooms:[4,18], // 设置地图可见级别范围
+        zoom:13  // 设置级别
+    });
+
+    // 楼块图层
+    let buildings = new AMap.Buildings({
+        'zooms':[15,20],
+        'zIndex':10,
+        'heightFactor':2 // 两倍于默认高度，3D下有效
+    });
+
+    let sate = new AMap.TileLayer.Satellite();
+
+    let map2 = new AMap.Map('container-two',{
+        center: [116.397428, 39.90923] ,
+        viewMode: '3D',
+        pitch: 60,
+        rotation: -35,
+        features:['bg','road','point'], // 隐藏默认楼块
+        // mapStyle:'amap://styles/light',
+        layers:[sate,buildings],
+        zoom:16
+
+    });
+
+    // 室内地图 一般浏览器会默认添加室内图层，这里主要为移动端，移动端默认不显示
+    // 移动端默认不显示，需要通过设置showIndoorMap属性设置打开）。当地图处在合适的级别下，移动到有室内地图的地方就会自动显示室内地图。
+    // 可以通过监听地图indoor_create 事件来获取这个室内图层，取得控制权。
+    let map3 = new AMap.Map('container-third',{
+        resizeEnable: true,
+        center: [116.519942, 39.924677],
+        zoom:18
+    });
+
+    map3.on('indoor_create',function () {
+            map3.indoorMap.showIndoorMap('B000A8VT15',4);
+    });
+
+    // 点标记与矢量图形
+    // 添加点标记
+    let marker = new AMap.Marker({
+        position: [116.39,39.9] // 位置
+    });
+
+    map.add(marker); // 添加到地图
+    // 移除方法 map.remove(marker);
+
+    // 添加矢量图形，比如圆Circle，折线Polyline，多边形Polygon，椭圆Ellipse
+    // 矩形Rectangle 贝瑟尔曲线BesizerCurve
+    // 这里添加折线
+    let lineArr = [
+        [116.368904, 39.913423],
+        [116.382122, 39.901176],
+        [116.387271, 39.912501],
+        [116.398258, 39.904600]
+    ];
+
+    let polyline = new AMap.Polyline({
+        path:lineArr, // 设置线覆盖物路径
+        strokeColor: '#3366FF', // 设置线颜色
+        strokeWeight: 5, // 线宽
+        strokeStyle: 'solid' // 线样式
+    });
+
+    map.add(polyline);
+
+
+    // 事件
+    let clickHandler = function (e) {
+        alert('你在[' +　e.lnglat.getLng() + ',' + e.lnglat.getLat() + ']的位置点击了地图');
+    }
+
+    // 绑定事件
+    // 类似sub.addEventListener();
+    map1.on('click',clickHandler);
+
+    // 解绑事件
+     map1.off('click',clickHandler);
+
+
+    // 信息窗体
+    //信息窗体内容
+
+    // 创建infoWindow实例
+    let content = '这是信息窗体';
+    let infoWindow = new AMap.InfoWindow({
+        anchor:'top-left',
+        content:content// 传入dom对象，或者html字符串
+    });
+
+    // 打开信息窗体
+    infoWindow.open(map,[116.398258, 39.904600]);
+
+
+</script>
 </body>
 </html>
