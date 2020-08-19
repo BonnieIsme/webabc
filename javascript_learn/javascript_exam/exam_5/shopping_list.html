@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My shopping list</title>
+</head>
+<style>
+    li {
+        margin-top: 10px;
+
+    }
+
+    li button {
+        font-size: 8px;
+        margin-left: 20px;
+        color: #666666;
+    }
+
+    .forms {
+        width: 400px;
+        min-height: 200px;
+        color: whitesmoke;
+        display: block;
+        margin: auto auto;
+        text-align: center;
+        background-color: rgba(0,0,0, .5);
+        background-image: linear-gradient(cornflowerblue,slateblue,blueviolet);
+    }
+
+</style>
+<body>
+    <div class="forms">
+        <h1>My shopping list</h1>
+        <div>
+            <label for="newItem">Enter a new item</label>
+            <input type="text" id="newItem" name="item">
+            <button>Add item</button>
+        </div>
+        <ul>
+
+        </ul>
+    </div>
+
+<script>
+    let forms = document.querySelector('.forms');
+    let input = document.querySelector("input");
+    let add = document.querySelector("button");
+    let itemList = document.querySelector("ul");
+
+    /*let width = window.innerWidth;
+    let height = window.innerHeight;
+
+    window.onresize = () => {
+        forms.style.width = width + 'px';
+    }*/
+
+    add.addEventListener('click',addItems);
+
+    function addItems() {
+        let newItem = document.createElement("li");
+        let span = document.createElement("span");
+        let deleteButton = document.createElement("button");
+        deleteButton.textContent = 'Delete';
+
+        let inputText = input.value;
+
+
+        if (inputText) {
+
+            newItem.appendChild(span);
+            span.textContent = inputText;
+            newItem.appendChild(deleteButton);
+            itemList.appendChild(newItem);
+
+            deleteButton.onclick = ()=> {
+                itemList.removeChild(newItem);
+            }
+            input.value = ' ';
+            input.focus();
+        }
+
+
+
+    }
+
+
+</script>
+</body>
+</html>

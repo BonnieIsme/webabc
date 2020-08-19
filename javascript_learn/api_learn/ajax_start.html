@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Ajax starting point</title>
+
+    <style>
+        html, pre {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 500px;
+            margin: 0 auto;
+            background-color: #ccc;
+        }
+
+        pre {
+            line-height: 1.5;
+            letter-spacing: 0.05rem;
+            padding: 1rem;
+            background-color: white;
+        }
+
+        label {
+            width: 200px;
+            margin-right: 33px;
+        }
+
+        select {
+            width: 350px;
+            padding: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+<h1>Ajax starting point</h1>
+
+<form>
+    <label for="verse-choose">Choose a verse</label>
+    <select id="verse-choose" name="verse-choose">
+        <option>Verse 1</option>
+        <option>Verse 2</option>
+        <option>Verse 3</option>
+        <option>Verse 4</option>
+    </select>
+</form>
+
+    <h2>The Conqueror Worm, <em>Edgar Allen Poe, 1843</em></h2>
+
+    <pre>
+
+    </pre>
+
+<script>
+    let select = document.querySelector("select");
+    let poemDisplay = document.querySelector("pre");
+
+    select.onchange = () => {
+        const verse = select.value;
+        updateDisplay(verse);
+    }
+
+    function updateDisplay(verse) {
+        verse = verse.replace(' ','');
+        verse = verse.toLowerCase();
+        // let url = '../verses/' + verse +　'.txt';
+        let url = 'https://www.fastmock.site/mock/182d65229f2db1b22f03aa0a8b9d85ca/test1/users';
+        /*   XMLHttpRequest
+        创建XHR请求
+        let request = new XMLHttpRequest();
+        request.open('GET',url);
+        request.responseType = 'text';
+
+        // 当onload 事件触发时（当响应已经返回时）这个事件会被运行。
+        // 发生这种情况时， response 数据将在XHR请求对象的响应属性中可用。
+        request.onload = () => {
+            poemDisplay.textContent = request.response;
+        }
+        request.send();
+        */
+
+
+        // Fetch
+        fetch(url).then(function (response) {
+            response.json().then(function (users) {
+                poemDisplay.textContent = users.map(user => user.name).join(',');
+            })
+        })
+
+    }
+
+    // 设置默认加载第一节
+    updateDisplay('Verse 1');
+    select.value = 'Verse 1';
+</script>
+</body>
+</html>

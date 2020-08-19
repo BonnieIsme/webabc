@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组练习</title>
+</head>
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+<img src="http://temp.im/300x200">
+<script>
+    let name = ['A','B','C'];
+    let hobby = ['music','dance','book'];
+    let address = ['Beijing'];
+
+    let names = ['a','b','c','d','e'];
+    // 连接 array.concat()
+    //name.concat(hobby,address);
+
+    // 复制到指定位置 array.copyWith(target,start,end); [start,end)
+   // name.copyWithin(2,0,2);
+
+    // array.entries(); 返回数组的迭代对象
+    let x = names.entries();
+    let demo1 = document.getElementById('demo1');
+    let demo2 = document.getElementById('demo2');
+    let demo3 = document.getElementById('demo3');
+
+    demo1.textContent = x.next().value;
+    demo2.textContent = x.next().value;
+    demo3.textContent = x.next().value;
+
+    // array.every(); 检测数组所有元素是否符合指定条件 返回false or true
+    function checkAdult(age) {
+        return age >= 18;
+    }
+
+    let ages = [32,11,14,18,19];
+    console.log(ages.every(checkAdult)); // show false
+
+
+</script>
+</body>
+</html>

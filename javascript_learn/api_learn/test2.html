@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Window resize example</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            background-image: url(../images/bgtile.png);
+            border: 10px solid white;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+
+    </div>
+
+<script>
+    let div = document.querySelector("div");
+    let width = window.innerWidth;
+    let height = window.innerHeight; // 获取视窗（显示文档的内部窗口）
+/*
+    // 如果要调整窗口大小使其更大，你可以看到div会保持相同大小 — 因为我们只能设置一次
+    // 和打开时的窗口一样大
+    div.style.width = width +　'px';
+    div.style.height = height +　'px';
+
+    */
+
+    // 用事件调整div的大小 window对象的resize可用事件
+    //
+
+
+   window.onresize = ()=> {
+        div.style.width = width +　'px';
+        div.style.height = height +　'px';
+    }
+
+
+</script>
+</body>
+</html>

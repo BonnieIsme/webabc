@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Simple DOM example</title>
+</head>
+<style>
+    div {
+        width: 180px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        font-size: 20px;
+        float: left;
+    }
+
+    p {
+        clear: both;
+    }
+</style>
+<body>
+<section>
+    <img src="../images/dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+    <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+    <div>这是个方块</div>
+    <div>这是个方块</div>
+    <div>这是个方块</div>
+    <div>这是个方块</div>
+    <div>这是个方块</div>
+    <div>这是个方块</div>
+    <div>这是个方块</div>
+</section>
+
+<script>
+    let link = document.querySelector("a");
+    link.textContent = 'Mozilla Developer Network';
+    link.href = 'https://developer.mozilla.org';
+
+    let divList = document.querySelectorAll("div");
+
+    for (let  i = 0; i <　divList.length; i++) {
+        divList[i].style.backgroundColor = 'rgb(' + randomNum(0,255) + ',' +　randomNum(0,255) +　',' + randomNum(0,255) + ')';
+    }
+
+    function randomNum(min,max) {
+        return Math.floor(Math.random() * max) + min;
+    }
+
+    let sect = document.querySelector("section");
+    let para = document.createElement("p");
+    para.textContent = 'We hope you enjoyed the ride.';
+    sect.appendChild(para);
+    para.setAttribute('class','link-para');
+
+    let text = document.createTextNode('— the premier source for web development knowledge.');
+    para.appendChild(text);
+
+    para.parentNode.removeChild(para);
+</script>
+</body>
+</html>
