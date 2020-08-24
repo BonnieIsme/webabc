@@ -30,10 +30,10 @@
         clearInterval(intervalRwd);
         clearInterval(intervalFwd);
         if (media.paused) {
-           // play.setAttribute('data-icon','U');
+            play.setAttribute('data-icon','u');
             media.play();
         } else {
-           // play.setAttribute('data-icon','P');
+            play.setAttribute('data-icon','P');
             media.pause();
         }
     }

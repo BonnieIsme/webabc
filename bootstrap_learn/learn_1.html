@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width,initial-scale=1,shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Bootstrap test</title>
+</head>
+<style>
+    mark {
+        background-color: greenyellow;
+    }
+</style>
+<body>
+
+    <h3>
+        fancy display
+        <small class="text-muted">with faded</small>
+    </h3>
+
+    <h1 class="display-1">h1 display1</h1>
+    <h1 class="display-2">h1 display2</h1>
+    <h1 class="display-3">h1 display3</h1>
+    <h1 class="display-4">h1 display4</h1>
+
+    <p><del>227</del></p>
+    <p>Sean is the <mark>best</mark> one</p>
+    <p><em class="text-muted">by Bonnie</em></p>
+
+    <p><abbr title="little">myLittleAbbr</abbr></p>
+    <p><abbr class="initialism" title="abbr">myAbbr</abbr></p>
+
+    <blockquote class="blockquote">
+        <p class="mb-0">abcABC</p>
+        <p>abcABC</p>
+        <footer class="blockquote-footer">Someone else is waiting.</footer>
+    </blockquote>
+
+    <div class="container">
+        <blockquote class="blockquote text-center">
+            <p>love story</p>
+            <footer class="blockquote-footer">by <cite>Taylor Swift</cite>.</footer>
+        </blockquote>
+
+        <blockquote class="blockquote text-right">
+            <p><strong>Blank space</strong></p>
+            <footer class="blockquote-footer">by<cite>Taylor Swift</cite></footer>
+        </blockquote>
+    </div>
+
+    // List
+    <ul class="list-unstyled">
+        <li>大漠孤烟直</li>
+        <li>长河落日圆</li>
+        <li>咬定青山不放松</li>
+        <li>立根原在破岩中</li>
+        <li>
+            <ul class="list-inline text-muted">
+                <li class="list-inline-item">大漠孤烟直</li>
+                <li class="list-inline-item">长河落日圆</li>
+                <li class="list-inline-item">咬定青山不放松</li>
+                <li class="list-inline-item">立根原在破岩中</li>
+            </ul>
+        </li>
+    </ul>
+
+    <dl class="row text-center" style="font-size: 2rem;background-color: #ffe4b2">
+        <dt class="col-sm-4">name：</dt>
+        <dd class="col-sm-8">Sean Xiao</dd>
+
+        <dt class="col-sm-4">sex:</dt>
+        <dd class="col-sm-8">male</dd>
+
+        <dt class="col-sm-4">hometown:</dt>
+        <dd class="col-sm-8">Chongqing</dd>
+
+    </dl>
+
+    <div class="row container text-center" style="background-color: wheat">
+        <div class="col-md-6 "><em>好好学习</em></div>
+        <div class="col-md-6"><em>天天向上</em></div>
+
+        <div class="w-100"></div> <!-- 换新行 -->
+
+        <div class="col-md-4"><u>我们</u></div>
+        <div class="col-md-4"><u>是</u></div>
+        <div class="col-md-4"><u>祖国的花朵</u></div>
+
+        <div class="w-100"></div> <!-- 换新行 -->
+        <div class="col-md-12"><mark>完事儿</mark></div>
+    </div>
+
+    <div class="container px-lg-5">
+        <div class="row mx-lg-n5">
+
+            <!-- x:左右 y:上下 真实大小：5-2=3rem 2是固定的-->
+            <div class="col py-3 px-lg-5 border bg-danger">Custom column padding</div>
+            <div class="col py-3 px-lg-5 border bg-light">Custom column padding</div>
+        </div>
+    </div>
+
+    <div class="row row-cols-2 text-center mx-5">
+        <div class="col border bg-light px-lg-5 py-3"><em>A</em></div>
+        <div class="col border bg-light px-lg-5 py-3"><em>B</em></div>
+        <div class="col border bg-light px-lg-5 py-3"><em>C</em></div>
+        <div class="col border bg-light px-lg-5 py-3"><em>D</em></div>
+    </div>
+
+    <div class="container bg-secondary" style="height: 200px">
+        <div class="row bg-success align-items-start text-center">
+            <div class="col-sm-2 py-3 px-sm-5">a</div>
+            <div class="col-sm-2 py-3 px-sm-5">a</div>
+            <div class="col-sm-2 py-3 px-sm-5">a</div>
+        </div>
+
+        <div class="row bg-warning text-center" style="height: 80px">
+            <div class="col-sm-2  align-self-start">b</div>
+            <div class="col-sm-2  align-self-center">b</div>
+            <div class="col-sm-2  align-self-end">b</div>
+        </div>
+
+       <!-- <div class="row align-items-end text-center">
+            <div class="col">c</div>
+            <div class="col">c</div>
+            <div class="col">c</div>
+        </div>  -->
+    </div>
+
+
+        <div class="container">
+            <div class="row justify-content-start bg-yellow">
+                <div class="col-sm-2 bg-danger">apple</div>
+                <div class="col-sm-2 bg-danger">apple</div>
+            </div>
+
+            <div class="row justify-content-center bg-yellow">
+                <div class="col-sm-2 bg-danger">apple</div>
+                <div class="col-sm-2 bg-danger">apple</div>
+            </div>
+
+            <div class="row justify-content-end bg-yellow">
+                <div class="col-sm-2 bg-danger">apple</div>
+                <div class="col-sm-2 bg-danger">apple</div>
+            </div>
+        </div>
+
+        <img src="https://dummyimage.com/1800x400/252626/dadbe8.png&text=Respnsive+image" class="img-fluid">
+
+        <div class="container text-center">
+            <img src="https://dummyimage.com/400x400/7e913a/bbed74" class="rounded">
+        </div>
+
+    <!-- table -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Second</th>
+            <th scope="col">Third</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Lee</td>
+            <td>Chris</td>
+            <td>Venus</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td class="bg-orange">Mark</td>
+            <td>Bob</td>
+            <td>Venus</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Dan</td>
+            <td>Chris</td>
+            <td>Anna</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="container text-center">
+        <figure class="figure">
+            <img class="figure-img img-fluid rounded" src="https://dummyimage.com/600x400/4e383e/e9ccd3.jpg&text=%E6%9A%AE%E4%BA%91%E7%81%B0">
+            <figcaption class="figure-caption">这是暮云灰</figcaption>
+        </figure>
+    </div>
+
+    <div class="alert alert-success" role="alert">
+        A green alert-check. And this is a <a href="#" class="alert-link">link</a>
+    </div>
+
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">这是个标题</h4>
+        <p class="mb-0">这是个段落</p>
+    </div>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <p><strong>Hey！兄弟  </strong>你还没close哦</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- Badge -->
+    <h1>Example heading<span class="badge badge-secondary">new</span></h1>
+    <h2>Example heading<span class="badge badge-secondary">new</span></h2>
+
+    <button type="button" class="btn btn-primary">
+        通知<span class="badge badge-light">2</span>
+    </button>
+
+    <!-- button -->
+    <a href="#" role="button" class="btn btn-primary">我是个按钮</a>
+    <input type="button" class="btn btn-info" value="input">
+    <button type="button" class="btn btn-outline-success">button</button>
+    <button type="button" class="btn btn-outline-info btn-lg btn-block">Block Button</button>
+
+    <!-- Active state -->
+    <button type="button" class="btn btn-info btn-md">active button</button>
+    <a href="#" class="btn btn-outline-info btn-md active" role="button" aria-pressed="true">active link</a>
+
+    <!-- Disabled state -->
+    <button type="button" class="btn btn-outline-primary btn-md "disabled>disabled button</button>
+
+    <!-- checkbox and radio buttons -->
+    <div class="btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+            <input type="checkbox" checked> checked
+        </label>
+    </div>
+
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-info active">
+            <input type="radio" name="options" id="option1" checked>
+            Active
+        </label>
+        <label class="btn btn-light active">
+            <input type="radio" name="options" id="option2" checked>
+            Radio1
+        </label>
+        <label class="btn btn-warning active">
+            <input type="radio" name="options" id="option3" checked>
+            Radio2
+        </label>
+    </div>
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-outline-secondary">left</button>
+        <button type="button" class="btn btn-outline-info">middle</button>
+        <button type="button" class="btn btn-outline-dark">right</button>
+    </div>
+
+    <!-- button toolbar -->
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button group">
+        <div class="btn-group mr-2" role="group" aria-label="first group">
+            <button type="button" class="btn btn-dark">1</button>
+            <button type="button" class="btn btn-dark">2</button>
+            <button type="button" class="btn btn-dark">3</button>
+        </div>
+        <div class="btn-group mr-2" role="group" aria-label="second group">
+            <button type="button" class="btn btn-info">4</button>
+            <button type="button" class="btn btn-info">5</button>
+            <button type="button" class="btn btn-info">6</button>
+        </div>
+        <div class="btn-group mr-2" role="group">
+            <button type="button" class="btn btn-light">7</button>
+            <button type="button" class="btn btn-light">8</button>
+        </div>
+    </div>
+
+    <div class="btn-toolbar my-3 justify-content-between" role="toolbar" aria-label="Toolbar with btn groups">
+        <div class="btn-group  mr-2" role="group" aria-label="first group">
+            <button type="button" class="btn btn-light">a</button>
+            <button type="button" class="btn btn-light">a</button>
+            <button type="button" class="btn btn-light">a</button>
+        </div>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text" id="btnGroupAddon">@</div>
+            </div>
+            <input type="text" class="form-control" placeholder="Input group example">
+        </div>
+    </div>
+
+    <!-- nesting -->
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-secondary">1</button>
+        <button type="button" class="btn btn-secondary">2</button>
+
+        <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">Dropdown link</a>
+                <a class="dropdown-item" href="#">Dropdown link</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional Javascript -->
+    <!--  jQuery must come first, then Popper.js, and then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

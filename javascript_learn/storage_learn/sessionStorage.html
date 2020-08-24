@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>sessionStorage</title>
 </head>
 <body>
-$END$
+    <input id="field" type="text">
+
+<script>
+    let field = document.getElementById('field');
+
+    if (sessionStorage.getItem('autoSave')) {
+        field.value = sessionStorage.getItem('autoSave');
+        console.log('上次的value：' + field.value);
+    }
+
+    field.addEventListener('change',function () {
+        sessionStorage.setItem('autoSave',field.value);
+        console.log('这次的value：' + field.value);
+        field.value = ' ';
+    })
+
+
+
+</script>
 </body>
 </html>
