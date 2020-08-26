@@ -1,0 +1,197 @@
+html,body {
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Google Sans', Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 0.875rem;
+}
+
+header {
+    padding: 8px;
+    height: 64px;
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+svg {
+    color: #5f6368;
+}
+
+.icon-danlieliebiao:before {
+    color: #5f6368;
+    position: relative;
+    top: -2px;
+}
+
+a {
+    color: currentColor;
+}
+
+a:hover {
+    color: currentColor;
+}
+
+svg:hover {
+    color: #202124;
+}
+
+.btn:hover, .nav-item:hover {
+    background-color: rgba(170,170,170,.2);
+}
+
+.first-item,.item, .nav-item {
+    color: #202124;
+    border-radius: 0 12px 12px 0;
+}
+
+.first-item {
+    font-weight: bold;
+}
+
+.item:focus {
+    font-weight: bold;
+}
+
+.more:focus {
+    font-weight: normal;
+}
+
+.first-item:focus {
+    color: #d93025;
+}
+
+.first-item:focus {
+    background-color: rgba(217,48,37,.3);
+}
+
+.item:focus {
+    background-color:rgba(170,170,170,.3);
+}
+
+.main-menu {
+    margin: 0 4px;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+}
+
+.hd-one {
+    padding: 0 30px 0 0;
+}
+
+.hd-two {
+    width: 60%;
+}
+
+.hd-three {
+    margin: 5px 0;
+}
+
+.hd-btn {
+    margin: 0;
+    padding: 0 5px;
+    width: 50px;
+    height: 45px;
+    background-color: transparent;
+}
+
+.hd-btn-right {
+    width: 40px;
+    height: 40px;
+    margin: 0 1px;
+}
+
+.hd-btn-right svg {
+    position: relative;
+    right: 20%;
+    top: -2px;
+}
+
+.search {
+    background-color: rgba(170,170,170,.2);
+    border-radius: .5rem;
+    width: 95%;
+    height: 100%;
+    position: relative;
+    left: -1%;
+}
+
+.classify li:nth-child(1) a:focus {
+    color: rgb(37,48,217);
+    background-color: rgba(37,48,217,.3);
+}
+
+.classify li:nth-child(2) a:focus {
+    color: rgb(211,142,17);
+    background-color: rgba(211,142,17,.3);
+}
+
+.classify li:nth-child(3) a:focus {
+    color: rgb(111,42,217);
+    background-color: rgba(111,42,217,.3);
+}
+
+.classify li:nth-child(4) a:focus {
+    color: rgb(88,215,77);
+    background-color: rgba(88,215,77,.3);
+}
+
+#search:focus, #searchDrop:focus {
+    outline: 0;
+    border: 0;
+}
+
+
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.left {
+    margin: 0;
+    padding: 0;
+    width: 256px;
+    height: 600px;
+}
+
+.left-top {
+    width: 256px;
+    height: 48px;
+    margin: 16px 0;
+
+}
+
+.middle {
+    width: 968px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.md-text {
+    color: #5f6368;
+    font-size: 12px
+}
+
+.bt::after {
+    content: " ";
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    background-color: #5f6368;
+    border-radius: 50%;
+    margin: 2px 3px;
+
+}
+
+.right {
+
+    width: 56px;
+    min-width: 56px;
+
+    /*height: 386px;*/
+    height: 600px;
+}

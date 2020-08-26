@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width,initial-scale=1,shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./gmail.css" type="text/css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2026370_fevl20hq8e7.css">
+    <title>gmail.com</title>
+</head>
+<body>
+
+
+    <header class="container-fluid bg-light border-bottom d-flex flex-row justify-content-between">
+        <div class="hd-one d-inline-flex">
+            <div role="button" class="btn rounded-circle  main-menu" aria-label="主菜单" aria-expanded="true">
+                <i class="iconfont icon-danlieliebiao"></i>
+            </div>
+            <a href="#">
+                <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x.png" width="109px" height="40px" style="margin: 0 0 4px" title="Gmail">
+            </a>
+        </div>
+        <div class="hd-two">
+            <form class="btn-group search">
+                <button type="submit" class="btn rounded-circle hd-btn" title="搜索">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                    </svg>
+                </button>
+
+                <input type="text" id="search" class="form-control" placeholder="搜索邮件" style="border: 0;background-color: transparent;height: 48px">
+
+                <button id="searchDrop" class="btn rounded-circle hd-btn" type="button" title="显示搜索选项">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-down-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <div class="hd-three d-inline-flex">
+            <button id="help" type="button" class="btn rounded-circle hd-btn-right">
+                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-question-circle" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M5.25 6.033h1.32c0-.781.458-1.384 1.36-1.384.685 0 1.313.343 1.313 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.007.463h1.307v-.355c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.326 0-2.786.647-2.754 2.533zm1.562 5.516c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                </svg>
+            </button>
+            <button id="set" type="button" class="btn rounded-circle hd-btn-right">
+                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-gear" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"/>
+                    <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"/>
+                </svg>
+            </button>
+            <button id="application" type="button" class="btn rounded-circle hd-btn-right">
+                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-grid-3x3-gap-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/>
+                </svg>
+            </button>
+
+            <button id="userID" type="button" class="btn rounded-circle hd-btn-right">
+                <img src="https://lh3.googleusercontent.com/ogw/ADGmqu8_lxW7inheP0PQ3dApvc9jS2u_kUQsFCD2tUcr=s32-c-mo" class="rounded-circle" style="position: relative;left: -60%;bottom: 3px">
+            </button>
+        </div>
+
+    </header>
+
+
+
+    <main class="container-fluid bg-dark d-flex" style="padding: 0;margin: 0;">
+        <div class="container bg-light left">
+
+            <div class="left-top">
+                <button id="writeMail" type="button" class="btn rounded-pill shadow" style="margin-left: 5px">
+                    <img src="https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png" width="32px" height="32px" style="margin-right: 10px">
+                    写邮件
+                </button>
+            </div>
+
+            <div class="overflow-auto pr-3 left-center" style="max-height: 35%;">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link py-1 first-item">
+                            <div class="mx-3 d-inline-block">
+                                <svg  width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-folder-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z"/>
+                                </svg>
+                            </div>
+
+                            收件箱
+                            <span class="badge float-right">7</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link  py-1 item">
+                            <div class="mx-3 d-inline-block">
+                                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                </svg>
+                            </div>
+                            已加星标
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link  py-1 item">
+                            <div class="mx-3 d-inline-block">
+                                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-clock-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                </svg>
+                            </div>
+                            已延后
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link  py-1 item">
+                            <div class="mx-3 d-inline-block">
+                                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-cursor-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
+                                </svg>
+                            </div>
+                            已发邮件
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link  py-1 item">
+                            <div class="mx-3 d-inline-block">
+                                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-file-earmark-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5.707A1 1 0 0 0 13.707 5L10 1.293A1 1 0 0 0 9.293 1H4zm5 1v3a1 1 0 0 0 1 1h3L9 2z"/>
+                                </svg>
+                            </div>
+                            草稿
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link  py-1 item more">
+                            <div class="mx-3 d-inline-block">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </div>
+                            <span>显示更多标签</span>
+                        </a>
+                    </li>
+                    <div class="visiable">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link  py-1 item">
+                                    <div class="mx-3 d-inline-block">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-bookmark-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M3 3a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12l-5-3-5 3V3z"/>
+                                        </svg>
+                                    </div>
+                                    重要邮件
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link  py-1 item">
+                                    <div class="mx-3 d-inline-block">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-chat-quote-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM7.194 6.766c.087.124.163.26.227.401.428.948.393 2.377-.942 3.706a.446.446 0 0 1-.612.01.405.405 0 0 1-.011-.59c.419-.416.672-.831.809-1.22-.269.165-.588.26-.93.26C4.775 9.333 4 8.587 4 7.667 4 6.747 4.776 6 5.734 6c.271 0 .528.06.756.166l.008.004c.169.07.327.182.469.324.085.083.161.174.227.272zM11 9.073c-.269.165-.588.26-.93.26-.958 0-1.735-.746-1.735-1.666 0-.92.777-1.667 1.734-1.667.271 0 .528.06.756.166l.008.004c.17.07.327.182.469.324.085.083.161.174.227.272.087.124.164.26.228.401.428.948.392 2.377-.942 3.706a.446.446 0 0 1-.613.01.405.405 0 0 1-.011-.59c.42-.416.672-.831.81-1.22z"/>
+                                        </svg>
+                                    </div>
+                                    聊天
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link  py-1 item">
+                                    <div class="mx-3 d-inline-block">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-stopwatch" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 15A6 6 0 1 0 8 3a6 6 0 0 0 0 12zm0 1A7 7 0 1 0 8 2a7 7 0 0 0 0 14z"/>
+                                            <path fill-rule="evenodd" d="M8 4.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4.5a.5.5 0 0 1 0-1h3V5a.5.5 0 0 1 .5-.5zM5.5.5A.5.5 0 0 1 6 0h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>
+                                            <path d="M7 1h2v2H7V1z"/>
+                                        </svg>
+                                    </div>
+                                    定时发送
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link  py-1 item">
+                                    <div class="mx-3 d-inline-block">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                                        </svg>
+                                    </div>
+                                    所有邮件
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link  py-1 item">
+                                    <div class="mx-3 d-inline-block">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-exclamation-octagon-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                                        </svg>
+                                    </div>
+                                    垃圾邮件
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link  py-1 item">
+                                    <div class="mx-3 d-inline-block">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+                                        </svg>
+                                    </div>
+                                    已删除邮件
+                                </a>
+                            </li>
+                            <li class="nav-item cla">
+                                <a href="#" class="nav-link  py-1 item" style="font-weight: bold">
+                                    <div class="d-inline-block">
+                                        <svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-caret-down-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="mr-3 d-inline-block" style="margin-left: 2px;">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-bookmarks-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12l-5-3-5 3V4z"/>
+                                            <path d="M14 14l-1-.6V2a1 1 0 0 0-1-1H4.268A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v12z"/>
+                                        </svg>
+                                    </div>
+                                    类别
+                                </a>
+                            </li>
+
+                            <div class="visiable">
+                                <ul class="nav flex-column ml-n3 classify">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link  py-1 item">
+                                            <div class="ml-5 mr-3 d-inline-block">
+                                                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-people-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                                                </svg>
+                                            </div>
+                                            社交
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link  py-1 item" style="font-weight: bold">
+                                            <div class="ml-5 mr-3  d-inline-block">
+                                                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-exclamation-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                                                </svg>
+                                            </div>
+                                            动态
+                                            <span class="badge float-right visiable">2</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link  py-1 item">
+                                            <div class="ml-5 mr-3  d-inline-block">
+                                                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-chat-square-dots-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm5 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                                </svg>
+                                            </div>
+                                            论坛
+                                            <span class="badge float-right">2</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link  py-1 item" style="font-weight: bold">
+                                            <div class="ml-5 mr-3  d-inline-block">
+                                                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-tag-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                                </svg>
+                                            </div>
+                                            推广
+                                            <span class="badge float-right visiable">14</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link  py-1 item">
+                                    <div class="mx-3 d-inline-block">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-gear-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 0 0-5.86 2.929 2.929 0 0 0 0 5.858z"/>
+                                        </svg>
+                                    </div>
+                                    管理标签
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link  py-1 item">
+                                    <div class="mx-3 d-inline-block">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-plus" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                                            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                                        </svg>
+                                    </div>
+                                    创建新标签
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+            <div class="left-third">
+                <div class="third-one border-bottom pb-1 pr-3">
+                    <p class="my-0" style="padding-left: 30px">会议</p>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  py-0 item">
+                                <div class="mx-3 d-inline-block">
+                                    <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-camera-video-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.667 3h6.666C10.253 3 11 3.746 11 4.667v6.666c0 .92-.746 1.667-1.667 1.667H2.667C1.747 13 1 12.254 1 11.333V4.667C1 3.747 1.746 3 2.667 3z"/>
+                                        <path d="M7.404 8.697l6.363 3.692c.54.313 1.233-.066 1.233-.697V4.308c0-.63-.693-1.01-1.233-.696L7.404 7.304a.802.802 0 0 0 0 1.393z"/>
+                                    </svg>
+                                </div>
+                                发起会议
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  py-0 item">
+                                <div class="mx-3 d-inline-block">
+                                    <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-keyboard-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M0 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm13 .25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zM2.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 8.75v-.5A.25.25 0 0 0 2.75 8h-.5zM4 8.25A.25.25 0 0 1 4.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 4 8.75v-.5zM6.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 7 8.75v-.5A.25.25 0 0 0 6.75 8h-.5zM8 8.25A.25.25 0 0 1 8.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 8 8.75v-.5zM13.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm-3-2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-1.5zm.75 2.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zM11.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zM9 6.25A.25.25 0 0 1 9.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 9 6.75v-.5zM7.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 8 6.75v-.5A.25.25 0 0 0 7.75 6h-.5zM5 6.25A.25.25 0 0 1 5.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 5 6.75v-.5zM2.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5A.25.25 0 0 0 4 6.75v-.5A.25.25 0 0 0 3.75 6h-1.5zM2 10.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zM4.25 10a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-5.5z"/>
+                                    </svg>
+                                </div>
+                                加入会议
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="third-two my-0 pr-3" style="padding-left: 30px">
+                    <p class="my-1" style="font-weight: bold">Hangouts</p>
+                    <img src="https://lh3.googleusercontent.com/ogw/ADGmqu8_lxW7inheP0PQ3dApvc9jS2u_kUQsFCD2tUcr=s32-c-mo" width="28px" height="28px" class="rounded-circle">
+                    <span>莹</span>
+                    <div class="d-inline-block">
+                       <a href="#">
+                           <svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-caret-down-fill" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                           </svg>
+                       </a>
+
+                    </div>
+                    <button type="button" class="btn rounded-circle float-right" style="width: 28px;height: 28px;">
+                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-plus" fill="#5f6368" xmlns="http://www.w3.org/2000/svg"
+                        style="position: relative;right: 10px;bottom: 6px">
+                            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="third-three mt-2 pr-3 overflow-auto border-top float-right" style="max-height: 60px;width: 230px">
+                    <div class="visiable my-1" style="margin-left: 30%;height: 70px">
+                        <svg width="72px" height="72px" viewBox="0 0 16 16" class="bi bi-chat-quote-fill d-none" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM7.194 6.766c.087.124.163.26.227.401.428.948.393 2.377-.942 3.706a.446.446 0 0 1-.612.01.405.405 0 0 1-.011-.59c.419-.416.672-.831.809-1.22-.269.165-.588.26-.93.26C4.775 9.333 4 8.587 4 7.667 4 6.747 4.776 6 5.734 6c.271 0 .528.06.756.166l.008.004c.169.07.327.182.469.324.085.083.161.174.227.272zM11 9.073c-.269.165-.588.26-.93.26-.958 0-1.735-.746-1.735-1.666 0-.92.777-1.667 1.734-1.667.271 0 .528.06.756.166l.008.004c.17.07.327.182.469.324.085.083.161.174.227.272.087.124.164.26.228.401.428.948.392 2.377-.942 3.706a.446.446 0 0 1-.613.01.405.405 0 0 1-.011-.59c.42-.416.672-.831.81-1.22z"/>
+                        </svg>
+                        <p style="color: #5f6368" class="my-0 py-0">近期没有聊天</p>
+                        <p style="color: #1883ba" role="button" class="my-0 py-0">发起新的聊天</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-top w-100 overflow-hidden text-center" style="height: 30px">
+                <div class="btn-group" role="group">
+                    <button class="btn" type="button">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        </svg>
+                    </button>
+                    <button class="btn" type="button">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-quote-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM7.194 6.766c.087.124.163.26.227.401.428.948.393 2.377-.942 3.706a.446.446 0 0 1-.612.01.405.405 0 0 1-.011-.59c.419-.416.672-.831.809-1.22-.269.165-.588.26-.93.26C4.775 9.333 4 8.587 4 7.667 4 6.747 4.776 6 5.734 6c.271 0 .528.06.756.166l.008.004c.169.07.327.182.469.324.085.083.161.174.227.272zM11 9.073c-.269.165-.588.26-.93.26-.958 0-1.735-.746-1.735-1.666 0-.92.777-1.667 1.734-1.667.271 0 .528.06.756.166l.008.004c.17.07.327.182.469.324.085.083.161.174.227.272.087.124.164.26.228.401.428.948.392 2.377-.942 3.706a.446.446 0 0 1-.613.01.405.405 0 0 1-.011-.59c.42-.416.672-.831.81-1.22z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <section class="container bg-secondary middle pr-3">
+
+            <div id="middle-top" class="d-flex border-bottom bg-light w-100 justify-content-between">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with btn groups">
+                    <div class="btn-group" role="group" aria-label="first group">
+                        <div type="button" id="select" role="checkbox" class="btn-group-toggle" data-toggle="buttons" title="选择">
+                            <label class="btn active">
+                                <input type="checkbox" name="checks" id="checks">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="dropdown" title="选择">
+                            <button type="button" class="btn" id="md-top-dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 3px">
+                                <svg width="0.5rem" height="0.5rem" viewBox="0 0 16 16" class="bi bi-caret-down-fill px-0" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                     style="position: relative;left: -5px;">
+                                    <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="md-top-dropdown1">
+                                <a href="#" class="dropdown-item">全部</a>
+                                <a href="#" class="dropdown-item">无</a>
+                                <a href="#" class="dropdown-item">已读</a>
+                                <a href="#" class="dropdown-item">未读</a>
+                                <a href="#" class="dropdown-item">已加星标</a>
+                                <a href="#" class="dropdown-item">未加星标</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-group" role="group" aria-label="second group">
+                        <button id="toNew" type="button" class="btn rounded-circle mx-1" title="刷新">
+                            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-arrow-clockwise" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M3.17 6.706a5 5 0 0 1 7.103-3.16.5.5 0 1 0 .454-.892A6 6 0 1 0 13.455 5.5a.5.5 0 0 0-.91.417 5 5 0 1 1-9.375.789z"/>
+                                <path fill-rule="evenodd" d="M8.147.146a.5.5 0 0 1 .707 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 1 1-.707-.708L10.293 3 8.147.854a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </button>
+
+                        <div class="dropdown">
+                            <button type="button" class="btn rounded-circle" id="md-top-dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="更多操作">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="md-top-dropdown2">
+                                <a href="#" class="dropdown-item">将所有对话标记为已读</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">选择邮件即可查看更多操作</a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <span class="btn mr-3 my-1 md-text">第 <span id="old">1</span> - <span id="new">10</span> 行，共 <span id="total">10</span> 行</span>
+                    <a href="#"  class="btn  disabled" role="button" aria-pressed="true" title="较新">
+                        <svg width="0.8rem" height="0.8rem" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </a>
+                    <a class="btn  disabled" role="button" aria-pressed="true" title="较旧">
+                        <svg width="0.8rem" height="0.8rem" viewBox="0 0 16 16" class="bi bi-chevron-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 与其它部分交互的主要内容 -->
+            <div class="middle-center w-100" id="middleContent">
+                <div class="w-100 bg-light">
+                    <ul class="list-unstyled">
+                        <li class="list-item">just for test</li>
+                        <li class="list-item">just for test</li>
+                        <li class="list-item">just for test</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="middle-bottom float-left d-flex bg-light md-text w-100 justify-content-between">
+                <div class="ml-3">
+                    使用了15GB存储空间中的<span>0</span>GB(<span>0</span>%)
+                    <a href="#" class="d-block">管理</a>
+                </div>
+                <div>
+                    <a href="#" class="bt">条款</a>
+                    <a href="#" class="bt">隐私权</a>
+                    <a href="#">使用规定</a>
+                </div>
+                <div class="mr-3">
+                    上次账号活动时间:<span>0</span>分钟前
+                    <a href="#" class="d-block">详细信息</a>
+                </div>
+            </div>
+        </section>
+
+        <aside class="container bg-light d-flex flex-column right">
+            <a class="btn rounded-circle align-self-center p-1  my-2" role="button" title="Google日历" style="width: 40px;height: 40px">
+                <img src="https://www.gstatic.com/companion/icon_assets/calendar_2x.png" width="20px" height="20px">
+            </a>
+            <a class="btn rounded-circle align-self-center p-1 my-2" role="button" title="Keep" style="width: 40px;height: 40px">
+                <img src="https://www.gstatic.com/companion/icon_assets/keep_2x.png" width="20px" height="20px">
+            </a>
+            <a class="btn rounded-circle align-self-center p-1 my-2" role="button" title="Tasks" style="width: 40px;height: 40px">
+                <img src="https://www.gstatic.com/companion/icon_assets/tasks2_2x.png" width="20px" height="20px">
+            </a>
+            <div class="separator align-self-center " style="width: 20px;height: 20px ;border-bottom:1px solid rgb(218,220,224)"></div>
+            <a class="btn rounded-circle align-self-center p-1 my-3" role="button" title="获取插件" style="width: 40px;height: 40px">
+                <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-plus" fill="#5f6368" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                </svg>
+            </a>
+
+        </aside>
+        <a id="hide" class="btn rounded-circle  position-absolute" role="button" title="隐藏侧边栏" style="width: 40px;height: 40px;top: 90%;right: 0.8%">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </a>
+
+
+    </main>
+
+
+
+
+
+<!--  jQuery must come first, then Popper.js, and then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>
