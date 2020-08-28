@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form name="form1">
+        <input id="in" type="text" name="in">
+        <button id="addIt">添加</button>
+    </form>
+
+<script>
+    let add = document.querySelector('#addIt');
+    add.onclick = () => {
+       // opener.document.form1.in.value += 'bob';
+      /* let newItem =  opener.document.createElement('li');
+       newItem.textContent = document.querySelector('input').value;
+       console.log(newItem);
+       window.opener.document.querySelector("#message").appendChild(newItem);
+       window.opener.location.reload();
+
+       */
+        window.opener.document.querySelector('#item').textContent = "我写了邮件";
+    }
+</script>
+</body>
+</html>

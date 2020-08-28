@@ -16,6 +16,14 @@ header {
     margin: 0;
 }
 
+.badge {
+    position: relative;
+}
+
+.nav-item {
+    width: 230px;
+}
+
 svg {
     color: #5f6368;
 }
@@ -59,11 +67,8 @@ svg:hover {
     font-weight: normal;
 }
 
-.first-item:focus {
+.first-item:focus, .first-item .active {
     color: #d93025;
-}
-
-.first-item:focus {
     background-color: rgba(217,48,37,.3);
 }
 
@@ -156,6 +161,7 @@ svg:hover {
     padding: 0;
     width: 256px;
     height: 600px;
+    position: relative;
 }
 
 .left-top {
@@ -187,10 +193,6 @@ svg:hover {
 
 }
 
-.right {
-    width: 56px;
-    height: 600px;
-}
 
 .hidden {
     width: 40px;
