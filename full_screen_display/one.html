@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css全屏布局练习</title>
+</head>
+<style>
+    /* float + calc */
+    /*
+    body,p {
+        margin: 0;
+    }
+
+    body, html, .parent {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .middle {
+        overflow: hidden;
+        height: calc(100% - 100px);
+    }
+
+    .left {
+        float: left;
+        width: 100px;
+        max-height: 10px;
+        height: 100%;
+    }
+
+    .right {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .right-in {
+        height: 1000px;
+    }
+
+    .top, .bottom {
+        height: 50px;
+    }
+
+     */
+
+    /* inline-block + calc */
+    /* body, p {
+        margin: 0;
+    }
+
+    body, html, .parent {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .top, .bottom {
+        height: 50px;
+    }
+
+    .middle {
+        height: calc(100% - 100px);
+    }
+
+    .left, .right {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .left {
+        margin-right: 20px;
+        width: 100px;
+        height: 100%;
+    }
+
+    .right {
+        width: calc(100% - 125px);
+        height: 100%;
+        overflow: auto;
+    }
+
+    .right-in {
+        height: 1000px;
+    }
+     */
+
+    /* absolute */
+    /*body, p {
+        margin:0;
+    }
+
+    html, body, .parent {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .top, .bottom, .middle {
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    .top {
+        top: 0;
+        height: 50px;
+    }
+
+    .bottom {
+        bottom: 0;
+        height: 50px;
+    }
+
+    .middle {
+        top: 50px;
+        bottom: 50px;
+    }
+
+    .left, .right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+
+    .left {
+        width: 100px;
+    }
+
+    .right {
+        left: 120px;
+        right: 0;
+        overflow: auto;
+    }
+
+    .right-in {
+        height: 1000px;
+    }
+     */
+
+    /* flex */
+    body, p {
+        margin: 0;
+    }
+
+    body, html, .parent {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .parent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top, .bottom {
+        height: 50px;
+    }
+
+    .middle {
+        display: flex;
+        flex: 1;
+    }
+
+    .left {
+        width: 100px;
+        margin-right: 20px;
+    }
+
+    .right {
+        flex: 1;
+        overflow: auto;
+    }
+
+    right-in {
+        height: 1000px;
+    }
+</style>
+<body>
+    <div class="parent" id="parent" style="background-color: wheat">
+        <div class="top" id="top" style="background-color: #66e9ff">
+            <p>top</p>
+        </div>
+        <div class="middle" style="background-color: #E83828">
+            <div class="left" >
+                <p style="background-color: #1883ba;">left</p>
+            </div>
+            <div class="right" style="background-color: #FF359A">
+                <div class="right-in">
+                    <p>right</p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom" id="bottom" style="background-color: #5f6368">
+            <p>bottom</p>
+        </div>
+    </div>
+</body>
+</html>
