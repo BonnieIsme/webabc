@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .red {
+    color: red;
+  }
+</style>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(item,index) in movies" @click="toRed()" :class="{red:isRed}">{{index}}-{{item}}</li>
+    </ul>
+    </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el:"#app",
+      data:{
+        movies:['名侦探柯南','圣少女','海贼王','网球王子'],
+        isRed:false,
+      },
+      methods:{
+        toRed:function () {
+          this.isRed = true;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
